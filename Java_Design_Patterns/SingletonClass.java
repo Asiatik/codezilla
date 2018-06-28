@@ -1,7 +1,7 @@
 public class SingletonClass 
 {
 	//static instance of SingletonClass
-	private static SingletonClass instance;
+	private static SingletonClass instance = new SingletonClass();
 	//unreachable constructor
 	private SingletonClass() {
 		
