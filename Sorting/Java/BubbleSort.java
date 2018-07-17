@@ -4,25 +4,27 @@
 class BubbleSort
 {
 	/* Fuction Implementing Bubble Sort Algorithm */
-		void sort(int arr[]){
-      int swapped;
-      int length = arr.length;
-      for(int i=0; i<length; i++)
-        { 
-	swapped=0;
-	for(int j=0; j<length-i-1; j++)
-	{
-          if(arr[j]>arr[j+1]){
-            int temp=arr[j+1];
-            arr[j+1]=arr[j];
-            arr[j]=temp;
-	 swapped=1;
-          }
-	}
-	if(swapped==0)
-	  break;
-	}
-    }
+	void sort(int arr[])
+ 	{
+      		int swapped;
+      		int length = arr.length;
+      		for(int i=0; i<length; i++)
+        	{ 
+		swapped=0;
+			for(int j=0; j<length-i-1; j++)
+			{
+          		 	if(arr[j]>arr[j+1])
+			 	{
+            		  	int temp=arr[j+1];
+            		  	arr[j+1]=arr[j];
+            		  	arr[j]=temp;
+	 		  	swapped=1;
+          		 	}
+			}
+		if(swapped==0)
+	  	break;
+		}
+    	}
 
 	/* A utility function to print array of size n */
 	static void printArray(int arr[])
