@@ -1,7 +1,7 @@
 public class SingletonClass 
 {
 	//static instance of SingletonClass
-	private static SingletonClass instance;
+	private static SingletonClass sInstance;
 	//unreachable constructor
 	private SingletonClass() {
 		
@@ -9,6 +9,9 @@ public class SingletonClass
 	//access method to static instance of SingletonClass
 	public static SingletonClass getInstance()
 	{
-		return instance;
+	    if(sInstance == null){
+                sInstance = new SingletonClass();
+            }
+            return sInstance;
 	}
 }
