@@ -28,7 +28,6 @@ void printArray(T *arr, N length) {
 template <class T, class N>
 void initializeArray(T *arr, N length) {
 	for (N i = 0; i < length; i++) {
-		arr[i] = rand() % 10;
 		arr[i] = static_cast <T> (rand()) / static_cast <T> (RAND_MAX/10);
 	}
 }
