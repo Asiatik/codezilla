@@ -38,7 +38,7 @@ information on using pull requests.
 
 ## Contact Us
 
-You can contact us through glitter [here[(https://gitter.im/asiatik-open)
+You can contact us through glitter [here](https://gitter.im/asiatik-open)
 
 ## Community Guidelines
 
