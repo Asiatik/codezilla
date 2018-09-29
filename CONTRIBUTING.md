@@ -22,8 +22,8 @@ Pull requests are the best way to propose changes to the codebase (we use [Githu
 4. Ensure the test suite passes.
 5. Issue that pull request from your feature branch!
 
-## Any contributions you make will be under the GPL 3.0 License
-In short, when you submit code changes, your submissions are understood to be under the same GPL 3.0
+## Any contributions you make will be under the MIT License
+In short, when you submit code changes, your submissions are understood to be under the same MIT License
 that covers the project. Feel free to contact the maintainers if that's a concern.
 
 ## Report bugs using Github's issues
