@@ -22,6 +22,13 @@ Pull requests are the best way to propose changes to the codebase (we use [Githu
 4. Ensure the test suite passes.
 5. Issue that pull request from your feature branch!
 
+## Adding a new algorithm or data structure.
+
+Make sure you adhere to the `algorithm/language/file` folder structure while adding code.
+
+Additionally we recommend using standard convention for your language such as indentation and variable naming while writing the algorithm.
+Useful comments will be a help. Finally, if you can write tests for you code, we urge you to do so.
+
 ## Any contributions you make will be under the MIT License
 In short, when you submit code changes, your submissions are understood to be under the same MIT License
 that covers the project. Feel free to contact the maintainers if that's a concern.
