@@ -1,4 +1,6 @@
 # codezilla
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 codezilla 🦖 One giant collection of algorithms &amp; design patterns. 
 
 > The pandora box of algorithms and data structures 
