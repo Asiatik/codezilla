@@ -9,5 +9,5 @@ Feel free to contribute. Create an issue, let others know which algorithm/data s
 
 ## License
 
-We believe in freedom and improvement. [GNU General Public License v3.0]
+[MIT License]
 
