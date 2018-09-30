@@ -11,7 +11,7 @@ Feel free to contribute. Create an issue, let others know which algorithm/data s
 
 ## Contributing
 
-We are open to contributions. Make sure you read [how to contribute](CONTRIBUTIONS.md) before contributing. 
+We are open to contributions. Make sure you read [how to contribute](CONTRIBUTING.md) before contributing. 
 
 ## License
 
