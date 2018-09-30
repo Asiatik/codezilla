@@ -15,5 +15,6 @@ int main( int argv,char* argc[] )
 {
     std::cout << gcd (100,10) << std::endl;
     std::cout << gcd (-100,10) << std::endl;
-    std::cout << gcd (3,1);
+    std::cout << gcd (3,1) << std::endl;
+    std::cout << gcd(3L,1L);
 }
