@@ -9,6 +9,10 @@ Feel free to contribute. Create an issue, let others know which algorithm/data s
 
 > The goal is to create a codebase for developers to access. Later we aim to develop extensions using this codebase to support multiple IDEs.
 
+## Contributing
+
+We are open to contributions. Make sure you read [how to contribute](CONTRIBUTING.md) before contributing. 
+
 ## License
 
 [MIT License]
