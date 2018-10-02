@@ -5,5 +5,5 @@ It is not as efficient on larger arrays/lists.
 
 Big O Notation
 * Best Case:    O(n)
-* Average Case: O(n<sup>2)
-* Worst Case:   O(n<sup>2)
+* Average Case: O(n<sup>2</sup>)
+* Worst Case:   O(n<sup>2</sup>)
