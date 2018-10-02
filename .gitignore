@@ -1,0 +1,17 @@
+#Python
+*.py[cod]
+*$py.class
+
+#Java
+*.class
+*.log
+*.jar
+
+#c/c++
+*.o
+*.obj
+
+#Executables
+*.exe
+*.out
+*.app
