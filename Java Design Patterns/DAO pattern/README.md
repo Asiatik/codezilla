@@ -1,4 +1,6 @@
-*Data Access Object Pattern or DAO pattern is used to separate low level data accessing API or operations from high level business services. Following are the participants in Data Access Object Pattern.*
+## Data Access Object Pattern aka DAO
+
+Data Access Object Pattern or DAO pattern is used to separate low level data accessing API or operations from high level business services. Following are the participants in Data Access Object Pattern.
 
 > **Data Access Object Interface** - This interface defines the standard operations to be performed on a model object(s).
 
