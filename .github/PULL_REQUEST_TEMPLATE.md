@@ -7,11 +7,11 @@ Please describe what changes you have made.
 
 For Example:
 
-Added a file(s) named '...' that implements '...'.
+* Added a file(s) named '...' that implements '...'.
 
-Changed the algorithm for performance/readablity/bugs.
+* Changed the algorithm for performance/readablity/bugs.
 
-Added documentation to the algorithm
+* Added documentation to the algorithm
 
 
 ## Related Issue
@@ -24,12 +24,12 @@ If fixing a bug, there should be an issue describing it with steps to reproduce.
 
 Please link to the issue here:
 
-## How Has This Been Tested?
+## How Has This Been Tested? (Optional)
 
 Please describe in detail how you tested your changes.
 You can skip this if you have not added any tests.
 
-## Screenshots (if appropriate):
+## Screenshots (Optional)
 
 ## Types of changes
 
