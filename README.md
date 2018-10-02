@@ -16,7 +16,7 @@ Here are 3 quick and painless steps to contribute to this project:
 * Add a a program to implement an algorithm in any language.
 To do so, first create an issue with the task you are doing, for example: "Issue - creating bubble sort in C". Create a pull request in response to that issue and finally submit it for review.
 
-* Name your branch Like `#IssueNo. Add Bubble Sort in C`.
+* Name your branch Like `#23 Add Bubble Sort in C`.
 
 	Also create a directory for any new algorithm if it doesn't exist.
 	eg. `observable_pattern`, `bubble_sort`.
@@ -51,7 +51,6 @@ To do so, first create an issue with the task you are doing, for example: "Issue
 * Create a New Pull Request from your forked repository (Click the New Pull Request button located at the top of your repo)
 * Wait for your PR review and merge approval!
 * __Star this repository__ if you had fun!
-
 
 
 Don't forget to include the comments as seen above. Feel free to include additional information about the language you chose in your comments too! Like a link to a helpful introduction or tutorial.
