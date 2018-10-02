@@ -3,7 +3,7 @@
 
 #### Below figure shows the graphical working of merge sort\.
 
-<img src="Merge-Sort-Tutorial.png" width="500" height="500" />
+<img src="Merge-Sort-Tutorial.png" width="450" height="450" />
 
 #### Algorithm
 ```
@@ -18,5 +18,4 @@ If r > l
      4. Merge the two halves sorted in step 2 and 3:
              Call merge(arr, l, m, r)
 ```
-'
-
+#### The merge(arr, l, m, r) is key process that assumes that arr[l..m] and arr[m+1..r] are sorted and merges the two sorted sub-arrays into one. See following C implementation for details.
