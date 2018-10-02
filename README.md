@@ -1,5 +1,6 @@
-# codezilla
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+#codezilla
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![Gitter](https://img.shields.io/gitter/room/DAVFoundation/DAV-Contributors.svg?)](https://gitter.im/asiatik-open/codezilla)
 
 codezilla 🦖 One giant collection of algorithms &amp; design patterns. 
 
