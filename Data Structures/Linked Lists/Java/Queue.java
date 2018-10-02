@@ -1,4 +1,4 @@
-//This class Implements Singly Linked List
+//This class Implements Queue using Linked List
 
 import java.util.LinkedList;
 
