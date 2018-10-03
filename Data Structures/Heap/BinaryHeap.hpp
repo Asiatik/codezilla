@@ -40,8 +40,8 @@ struct Array{
 		return !(*this == other);
 	}
 
-	Array(int lenght){
-		this->size = lenght;
+	Array(int length){
+		this->size = length;
 		this->ptr = (T*) calloc(this->size,sizeof(T));
 	}
 };
