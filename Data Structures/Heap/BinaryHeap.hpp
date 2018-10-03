@@ -22,14 +22,13 @@ struct Array{
 		if(this->size != other.size){
 			return false;
 		}else{
-			bool flag = true;
-			for(int i = 0; i < this->size;i++){
-				if(this->ptr[i] != other.ptr[i]){
-					flag = false;
-				}
-			}
-			return flag;
-		}
+            for(int i = 0; i < this->size;i++){
+                if(this->ptr[i] != other.ptr[i]){
+                    return false;
+                }
+            }
+            return true;
+        }
 	}
 
 	T operator[](int index){
