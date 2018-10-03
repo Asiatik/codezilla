@@ -32,7 +32,7 @@ To do so, first create an issue with the task you are doing, for example: "Issue
 * Clone your fork down to your local machine
 
   ```sh
-  $ git clone https://github.com/Asiatik/codezilla.git
+  $ git clone https://github.com/<YOUR_USERNAME>/codezilla.git
   ```
 
 * Create a branch
