@@ -2,8 +2,8 @@
 #define BOOST_TEST_MODULE QueueTest
 
 #include <boost/test/unit_test.hpp>
-#include "../CircularQueue.hpp"
-#include "../SimpleQueue.hpp"
+#include "CircularQueue/CircularQueue.hpp"
+#include "StandardQueue/SimpleQueue.hpp"
 #include <iostream>
 
 struct QueueInit{
