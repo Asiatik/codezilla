@@ -1,6 +1,8 @@
-//You are given a set of coins A. In how many ways can you make sum B assuming you have infinite amount of each coin in the set.
-//Question link - https://www.interviewbit.com/problems/coin-sum-infinite/
+/* @author Navneet Jain
+ * You are given a set of coins A. In how many ways can you make sum B assuming you have infinite amount of each coin in the set.
+ * Question link - https://www.interviewbit.com/problems/coin-sum-infinite/
 
+ */
 #include <iostream>
 #include<vector>
 #include <algorithm>
