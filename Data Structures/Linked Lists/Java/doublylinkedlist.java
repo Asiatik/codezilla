@@ -39,7 +39,7 @@ class linked {
       System.out.println("Node Inserted at the front of the Linked list!");
     }
   }
-
+  /* Insert node at the end of linked list */
   void insert_end(int value) {
     linkedlist node = new linkedlist(value);
     if(fstnode == null) {
@@ -55,7 +55,7 @@ class linked {
       System.out.println("Node Inserted at the end of the Linked list!");
     }
   }
-
+  /* Delete node from linked list */
   void delete() {
     int count = 0, number, i;
     linkedlist node, node1, node2;
@@ -82,6 +82,7 @@ class linked {
         node.next = null;
         node = null;
       }
+  /* Delete last node from linked list */
       else if(number == count) {
         node = lastnode;
         lastnode = node.prev;
