@@ -33,7 +33,8 @@ void insertion_after(int y){
 	
 	student* temp=new student();
 	temp->data=y;
-	cout<<endl<<"enter the element after which to be inserted: ";                   cin>>l;
+	cout<<endl<<"enter the element after which to be inserted: ";                   
+	cin>>l;
 	FindLocation();
 	
    		if(loc==NULL){
@@ -93,8 +94,7 @@ int main()
 {
 	start=NULL;
 	int i,n,x,k,m;
-	 cout<<endl<<"Enter the number of elements: ";
-        cin>>n;
+	 
          while(1){
 	cout<<"select from the following: "<<endl;
 	cout<<"1.insertion at the beginning "<<endl;
@@ -106,13 +106,17 @@ int main()
 	cin>>k;
 	switch(k)
 	{
-	  case 1: cout<<"enter the number:";
+	  case 1: cout<<endl<<"Enter the number of elements: ";
+       		  cin>>n;
+	   cout<<"enter the number:";
            for(i=0;i<n;i++){
             cin>>x;
             insertion_begin(x);
       }
 	   break;
-	  case 2: cout<<"enter the number:";
+	  case 2: cout<<endl<<"Enter the number of elements: ";
+        	  cin>>n;
+	   cout<<"enter the number:";
            for(i=0;i<n;i++){
             cin>>x;
 	    insertion_end(x);
