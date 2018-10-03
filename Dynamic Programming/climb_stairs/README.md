@@ -14,7 +14,7 @@ More info: https://www.interviewbit.com/problems/stairs/
 Solution Approach:
 The solution approach here is DP. We calculate the ways to reach a stair based on it's subproblems.
 One can reach nth stair from n-1th stair and n-2th stair.
-Hence the subproblem gives a generic statement as:
+Hence the subproblem gives a generic equation:
 	num_of_ways[n] = num_of_ways[n-1] + num_of_ways[n-2]
 
 And the base statement becomes number_of_ways[1] = 1 and number_of_ways[2] = 2
