@@ -1,17 +1,15 @@
-#include<iostream>
-#include<climits>
-using namespace std;
+
 
 void swap(int *x, int *y);
 
 class Maxheap
 {
     int *arr;
-    int cap;
-    int hs;
+    int capacity;
+    int heap_size;
 public:
-    // Constructor
-    Maxheap(int cap);
+    
+    Maxheap(int capacity);
 
 
     void Maxheapify(int );
@@ -40,25 +38,25 @@ public:
     void insertKey(int k);
 };
 
-Maxheap::Maxheap(int cap)
+Maxheap::Maxheap(int capacity)
 {
-    hs = 0;
-    cap = cap;
-    arr = new int[cap];
+    heap_size = 0;
+    capacity = capacity;
+    arr = new int[capacity];
 }
 
 
 void Maxheap::insertKey(int k)
 {
-    if (hs == cap)
+    if (heap_size == capacity)
     {
-        cout << "\nOverflow: Could not insertKey\n";
+        std ::  cout << "\nOverflow: Could not insertKey\n";
         return;
     }
 
 
-    hs++;
-    int i = hs - 1;
+    heap_size++;
+    int i = heap_size - 1;
     arr[i] = k;
 
 
@@ -81,18 +79,18 @@ void Maxheap::increaseKey(int i, int new_val)
 
 int Maxheap::extractMax()
 {
-    if (hs <= 0)
+    if (heap_size <= 0)
         return INT_MIN;
-    if (hs == 1)
+    if (heap_size == 1)
     {
-        hs--;
+        heap_size--;
         return arr[0];
     }
 
 
     int root = arr[0];
-    arr[0] = arr[hs-1];
-    hs--;
+    arr[0] = arr[heap_size-1];
+    heap_size--;
     Maxheapify(0);
 
     return root;
@@ -111,9 +109,9 @@ void Maxheap::Maxheapify(int i)
     int l = left(i);
     int r = right(i);
     int largest = i;
-    if (l < hs && arr[l] > arr[i])
+    if (l < heap_size && arr[l] > arr[i])
         largest = l;
-    if (r < hs && arr[r] > arr[largest])
+    if (r < heap_size && arr[r] > arr[largest])
         largest = r;
     if (largest != i)
     {
@@ -128,22 +126,4 @@ void swap(int *x, int *y)
     int temp = *x;
     *x = *y;
     *y = temp;
-}
-
-
-int main()
-{
-    Maxheap h(13);
-    h.insertKey(4);
-    h.insertKey(3);
-    h.deleteKey(2);
-    h.insertKey(16);
-    h.insertKey(6);
-    h.insertKey(5);
-    h.insertKey(46);
-    cout << h.extractMax() << " ";
-    cout << h.getMax() << " ";
-    h.increaseKey(2, 7);
-    cout << h.getMax();
-    return 0;
 }
