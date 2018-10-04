@@ -1,5 +1,4 @@
 #include <iostream>
-#include <conio.h>
 
 using namespace std;
 int main()
@@ -13,7 +12,7 @@ int c=1,i=0,data,item;
 start=last=NULL;
 
 while(c<4 && c>0){
-	cout<<"1.Insert\n2.Deletion\n3.Link List\n";
+	cout<<"1.Insert\n2.Deletion\n3.Linked List\n";
 	cin>>c;
 
 	switch(c){
@@ -88,6 +87,5 @@ while(c<4 && c>0){
 
 }
 
-getch();
 return 0;
 }
