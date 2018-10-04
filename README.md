@@ -1,5 +1,7 @@
 # codezilla
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![Gitter](https://img.shields.io/gitter/room/DAVFoundation/DAV-Contributors.svg?)](https://gitter.im/asiatik-open/codezilla)
 
 codezilla 🦖 One giant collection of algorithms &amp; design patterns. 
 
@@ -30,9 +32,14 @@ To do so, first create an issue with the task you are doing, for example: "Issue
 * Clone your fork down to your local machine
 
   ```sh
-  $ git clone https://github.com/Asiatik/codezilla.git
+  $ git clone https://github.com/Username/codezilla.git
   ```
-
+  For e.g:-
+  ```sh
+  $ git clone https://github.com/Anujg935/codezilla.git
+  ```
+  in the above example Anujg935 is the username of the user who is forking the repository.
+  
 * Create a branch
 
   ```sh
