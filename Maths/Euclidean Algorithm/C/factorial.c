@@ -8,4 +8,5 @@ int fact(int n) {
 int main() {
 	int a = fact(3);
 	printf("%d \n",a);
+	return 0;
 }
