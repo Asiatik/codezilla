@@ -1,0 +1,49 @@
+#!/bin/bash
+
+intro() {
+    echo "Thank you for forking CodeZila"
+    echo "Please input any names in Upper Cammel Case and without any special characters"
+    read -p "What is the name of the algorithm or design you want to implement? (one word) " algorithm
+    checkInput $algorithm    
+    read -p "What language do you want to implement $algorithm in? " language
+    checkInput $language
+    createDir $algorithm $language
+    printTree $algorithm $language
+    checkDir $algorithm
+}
+
+# Checks the input to see if it does not have illegal characters
+checkInput() {
+    # $1 is the string being checked
+    if [[ $1 == *['!'@#\$%^\&*()_+]* ]]
+    then
+      echo "Illegal character used"
+      exit
+    fi
+}
+
+# Shows the user the created file structure
+printTree() {
+    echo "$1"
+    echo "├── readme.md"
+    echo "└── $2"
+}
+
+# Creates the file structure
+createDir() {
+    mkdir $1
+    mkdir $1/$2
+    echo "# $1 implemented in $2" > $1/readme.md
+}
+
+# Asks the user if they want to keep the files
+checkDir() {
+    read -p "Is the file structure above correct? (y/n)? " choice
+        case "$choice" in 
+        y|Y ) echo "Enjoy Coding!";;
+        n|N ) echo "Files Deleted"; rm -rf $1 ;;
+        * ) echo "invalid - Files not deleted";;
+    esac
+}
+
+intro
