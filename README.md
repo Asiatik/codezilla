@@ -32,9 +32,14 @@ To do so, first create an issue with the task you are doing, for example: "Issue
 * Clone your fork down to your local machine
 
   ```sh
-  $ git clone https://github.com/Asiatik/codezilla.git
+  $ git clone https://github.com/Username/codezilla.git
   ```
-
+  For e.g:-
+  ```sh
+  $ git clone https://github.com/Anujg935/codezilla.git
+  ```
+  in the above example Anujg935 is the username of the user who is forking the repository.
+  
 * Create a branch
 
   ```sh
