@@ -1,3 +1,4 @@
+
 '''
  * This class Implements Stack
  * @author asterisk30
@@ -39,3 +40,7 @@ if __name__=='__main__':
                 print('Popped value: ', s.pop())
         elif operation == 'quit':
             break
+
+
+
+
