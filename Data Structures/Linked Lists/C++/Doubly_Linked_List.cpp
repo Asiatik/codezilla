@@ -1,91 +1,116 @@
+//Implementation of Doubly Linked List in C++.
+
 #include <iostream>
 
-using namespace std;
-int main()
-{
 struct node{
-	int info;
-	node *left,*right;
-}*ptr,*start,*last,*save;
+    int info;
+    node *left,*right;
+};
 
-int c=1,i=0,data,item;
-start=last=NULL;
+void display();
+void insertNode(int data);
+void deleteNode(int item);
 
-while(c<4 && c>0){
-	cout<<"1.Insert\n2.Deletion\n3.Linked List\n";
-	cin>>c;
+node* start;
+node* last;
 
-	switch(c){
-		case 1:
-		cout<<"Enter Data\n";
-		cin>>data;
+int main(){
 
-		ptr=new node;
-		ptr->info=data;
-		ptr->left=last;
-		ptr->right=NULL;
+    int counter=1,data,item;
+    start=last=NULL;
 
-		if(start==NULL){
-			start=last=ptr;
-		}
+    while(counter<4 && counter>0){
+        std::cout<<"1.Insert\n2.Deletion\n3.Linked List\n";
+        std::cin>>counter;
 
-		else{
-			last->right=ptr;
-			last=ptr;
-		}
-		break;
+        switch(counter){
+            case 1:
+            std::cout<<"Enter Data\n";
+            std::cin>>data;
 
-		case 2:
-		if(start==NULL){
-			cout<<"Underflow\n";
-		}
+            insertNode(data);
+            break;
 
-		else{
-			cout<<"Enter Item to be Deleted\n";
-			cin>>item;
-			ptr=start;
+            case 2:
+            if(start==NULL){
+                std::cout<<"Underflow\n";
+            }
 
-			while(ptr!=NULL){
-				if(ptr->info==item){
-					i++;
-					if(ptr==start){
-						start->left=NULL;
-						start=start->right;
-					}
+            else{
+                std::cout<<"Enter Item to be Deleted\n";
+                std::cin>>item;
 
-					else{
-						ptr->left->right=ptr->right;
-						ptr->right->left=ptr->left;
-					}
-				delete ptr;
-				cout<<"Item Deleted\n";
-				}
-				ptr=ptr->right;
-			}
-	
-			if(i==0){
-				cout<<"Item Does not exist\n";
-			}
-			i=0;
-		}
-		break;
+                deleteNode(item);
+            }
+            break;
 
-		case 3:
+            case 3:
+            display();
+            break;
 
-		ptr=start;
+            default:
+            std::cout<<"Wrong Choice\nExiting...\n";
+        }
+    }
 
-		while(ptr!=NULL){
-			cout<<ptr->info<<"->";
-			ptr=ptr->right;
-		}
-		cout<<"\n";
-		break;
-
-		default:
-		cout<<"Wrong Choice\nExiting...\n";
-	}
-
+    return 0;
 }
 
-return 0;
+void insertNode(int data){
+    node* ptr=new node;
+    ptr->info=data;
+    ptr->left=last;
+    ptr->right=NULL;
+
+    if(start==NULL){
+        start=last=ptr;
+    }
+
+    else{
+        last->right=ptr;
+        last=ptr;
+    }
+    std::cout<<"Data Inserted\n";
+}
+
+void deleteNode(int item){
+    bool isFound=false;
+    node* ptr=start;
+
+    while(ptr!=NULL){
+        if(ptr->info==item){
+            isFound=true;
+            if(ptr==start){
+                start->left=NULL;
+                start=start->right;
+            }
+            else if(ptr==last){
+                ptr->left->right=NULL;
+                last=last->left;
+            }
+            else{
+                ptr->left->right=ptr->right;
+                ptr->right->left=ptr->left;
+            }
+
+            delete ptr;
+            std::cout<<"Item Deleted\n";
+            break;
+        }
+        ptr=ptr->right;
+    }
+    
+    if(!isFound){
+        std::cout<<"Item Does not exist\n";
+    }
+}
+
+void display(){
+    node* ptr=start;
+
+    while(ptr!=NULL){
+        std::cout<<ptr->info<<"->";
+        ptr=ptr->right;
+    }
+    std::cout<<"X\n";
 }
