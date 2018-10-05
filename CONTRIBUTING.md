@@ -29,6 +29,8 @@ Make sure you adhere to the `algorithm/language/file` folder structure while add
 Additionally we recommend using standard convention for your language such as indentation and variable naming while writing the algorithm.
 Useful comments will be a help. Finally, if you can write tests for you code, we urge you to do so.
 
+**Easiest way (Recommended) ⭐️ - You can run `bash runme.bh` to make the appropriate file structure.**
+
 ## Any contributions you make will be under the MIT License
 In short, when you submit code changes, your submissions are understood to be under the same MIT License
 that covers the project. Feel free to contact the maintainers if that's a concern.
