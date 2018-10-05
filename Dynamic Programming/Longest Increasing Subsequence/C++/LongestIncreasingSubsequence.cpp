@@ -15,23 +15,29 @@
 
 #include<iostream>
 #include<vector>
-using namespace std;
-int lis(const vector<int> &A) {
-    vector<int> B(A.size(), 1);
+
+int longestSubsequence(const std::vector<int> &A)
+{
+    std::vector<int> B(A.size(), 1);
     int max_value = 1;
-    for(int i = 1 ; i < A.size(); i++){
-        for(int j = 0 ; j < i; j++){
-            if(A[j] < A[i]){
-                B[i] = max(B[i] , B[j] + 1); 
-                max_value = max(B[i], max_value);
+    
+    for(unsigned int i = 1 ; i < A.size(); i++)
+    {
+        for(unsigned int j = 0 ; j < i; j++)
+        {
+            if(A[j] < A[i])
+            {
+                B[i] = std::max(B[i] , B[j] + 1); 
+                max_value = std::max(B[i], max_value);
             }
         }
     }
-    return max_value;
     
+    return max_value;
 }
 
-int main(){
-	vector<int> A = {0, 8, 4, 12, 2, 10, 6, 14, 1, 9, 5, 13, 3, 11, 7, 15};
-	cout << lis(A);
+int main()
+{
+	std::vector<int> A = {0, 8, 4, 12, 2, 10, 6, 14, 1, 9, 5, 13, 3, 11, 7, 15};
+	std::cout << longestSubsequence(A);
 }
