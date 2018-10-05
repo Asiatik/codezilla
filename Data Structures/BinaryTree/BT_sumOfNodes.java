@@ -1,4 +1,3 @@
-package Git;
 
 import java.util.Scanner;
 
@@ -109,8 +108,8 @@ public class BT_sumOfNodes {
 				return 0;
 			}
 
-			int ls = sumOfNodes(node, node.left);
-			int rs = sumOfNodes(node, node.right);
+			int ls = sumOfNodes(node, node.left);		// ls -> left tree's sum
+			int rs = sumOfNodes(node, node.right);		// rs -> right tree's sum
 
 			return node.data + ls + rs;
 		}

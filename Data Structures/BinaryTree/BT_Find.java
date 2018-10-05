@@ -1,4 +1,3 @@
-package Git;
 
 import java.util.Scanner;
 
@@ -114,8 +113,8 @@ public class BT_Find {
 				return true;
 			}
 
-			boolean lf = find(node.left, item);
-			boolean rf = find(node.right, item);
+			boolean lf = find(node.left, item);		// lf -> left's tree answer
+			boolean rf = find(node.right, item);		// rf -> right's tree answer
 
 			return lf || rf;
 

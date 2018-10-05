@@ -1,4 +1,3 @@
-package Git;
 
 import java.util.LinkedList;
 import java.util.Scanner;
@@ -104,9 +103,9 @@ public class BT_traversalsIteratively {
 		private class OrderPair {
 
 			Node node;
-			boolean selfDone;
-			boolean leftDone;
-			boolean rightDone;
+			boolean selfDone;		// for check if the node itself need's to be pushed to stack or not
+			boolean leftDone;		// for check if the left node  need's to be pushed to stack or not
+			boolean rightDone;		// for check if the right node  need's to be pushed to stack or not
 
 		}
 

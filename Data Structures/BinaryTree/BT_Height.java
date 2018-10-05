@@ -1,4 +1,3 @@
-package Git;
 
 import java.util.Scanner;
 

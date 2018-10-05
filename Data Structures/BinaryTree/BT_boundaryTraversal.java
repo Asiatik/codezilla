@@ -1,4 +1,3 @@
-package Git;
 
 import java.util.Scanner;
 
@@ -49,14 +48,14 @@ public class BT_boundaryTraversal {
 			nn.data = val;
 			this.size++;
 
-			boolean lc;
+			boolean lc;			// lc -> left child
 			System.out.println("Do you want left child");
 			lc = scn.nextBoolean();
 			if (lc) {
 				nn.left = construct(nn, true);
 			}
 
-			boolean rc;
+			boolean rc;			// rc -> right child
 			System.out.println("Do you want right child");
 			rc = scn.nextBoolean();
 			if (rc) {

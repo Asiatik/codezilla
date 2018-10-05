@@ -1,4 +1,3 @@
-package Git;
 
 import java.util.Scanner;
 
@@ -105,7 +104,7 @@ public class BT_isIdentical {
 			return isIdentical(this.root, bt2.root);
 		}
 
-		private boolean isIdentical(Node node, Node onode) {
+		private boolean isIdentical(Node node, Node onode) {		// onode -> other node is the root node if another tree
 
 			if (node == null && onode == null) {
 				return true;

@@ -1,4 +1,3 @@
-package Git;
 
 import java.util.Scanner;
 
@@ -120,14 +119,14 @@ public class BT_largestBSTPair {
 		private BSTPair largestBST(Node node) {
 
 			if (node == null) {
-				BSTPair pair = new BSTPair();
+				BSTPair pair = new BSTPair(); // pair -> base result's pair
 				return pair;
 			}
 
 			BSTPair left = largestBST(node.left);
 			BSTPair right = largestBST(node.right);
 
-			BSTPair mr = new BSTPair();
+			BSTPair mr = new BSTPair();		// mr -> my result which is being formed by recursion's answer
 			mr.max = Math.max(node.data, Math.max(left.max, right.max));
 			mr.min = Math.min(node.data, Math.min(left.min, right.min));
 

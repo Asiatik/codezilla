@@ -1,4 +1,3 @@
-package Git;
 
 import java.util.Scanner;
 
@@ -32,7 +31,7 @@ public class BT_DiaPair {
 			this.root = construct(null, false);
 		}
 
-		private Node construct(Node parent, boolean ilc) {
+		private Node construct(Node parent, boolean ilc) {		// ilc -> This is for asking if left child is present then pass 										   true else pass false
 
 			if (parent == null) {
 				System.out.println("Enter the data for root node ? ");
@@ -44,19 +43,19 @@ public class BT_DiaPair {
 				}
 			}
 
-			int val = scn.nextInt();
-			Node nn = new Node();
+			int val = scn.nextInt();	// val -> for generating the node
+			Node nn = new Node();		// nn -> stand for new node
 			nn.data = val;
 			this.size++;
 
-			boolean lc;
+			boolean lc;			// lc -> left child
 			System.out.println("Do you want left child");
 			lc = scn.nextBoolean();
 			if (lc) {
 				nn.left = construct(nn, true);
 			}
 
-			boolean rc;
+			boolean rc;			// rc -> right child
 			System.out.println("Do you want right child");
 			rc = scn.nextBoolean();
 			if (rc) {
@@ -117,10 +116,10 @@ public class BT_DiaPair {
 				return 0;
 			}
 
-			int ld = diameter(node.left);
-			int rd = diameter(node.right);
+			int ld = diameter(node.left);		// ld -> left diameter
+			int rd = diameter(node.right);		// rd -> right diameter
 
-			int sp = height(node.left) + height(node.right) + 2;
+			int sp = height(node.left) + height(node.right) + 2; // sp -> self participation of the node itself
 
 			return Math.max(sp, Math.max(ld, rd));
 
@@ -139,14 +138,14 @@ public class BT_DiaPair {
 		private Pair DiaPair(Node node) {
 
 			if (node == null) {
-				Pair br = new Pair();
+				Pair br = new Pair();  // br -> base result
 				return br;
 			}
 
-			Pair lr = DiaPair(node.left);
-			Pair rr = DiaPair(node.right);
+			Pair lr = DiaPair(node.left);		// lr -> left result
+			Pair rr = DiaPair(node.right);		// rr -> right result
 
-			Pair mr = new Pair();
+			Pair mr = new Pair();				// mr -> my own result which is being generated with help of recursion
 			mr.height = Math.max(lr.height, rr.height) + 1;
 
 			int ld = diameter(node.left);
@@ -160,4 +159,5 @@ public class BT_DiaPair {
 		}
 
 	}
+	scn.close();
 }

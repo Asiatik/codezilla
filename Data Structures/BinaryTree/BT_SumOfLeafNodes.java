@@ -1,4 +1,3 @@
-package Git;
 
 import java.util.Scanner;
 
@@ -103,7 +102,7 @@ public class BT_SumOfLeafNodes {
 		}
 
 		public int SumofLeafNodes() {
-			Res r = new Res();
+			Res r = new Res();	// r is created as a new object so to keep track of variable sum
 			leafSum(this.root, r);
 			return r.sum;
 		}

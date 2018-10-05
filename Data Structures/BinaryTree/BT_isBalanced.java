@@ -1,4 +1,3 @@
-package Git;
 
 import java.util.Scanner;
 
@@ -45,18 +44,18 @@ public class BT_isBalanced {
 			}
 
 			int val = scn.nextInt();
-			Node nn = new Node();
+			Node nn = new Node();		// nn  -> new node
 			nn.data = val;
 			this.size++;
 
-			boolean lc;
+			boolean lc;		// lc -> left child
 			System.out.println("Do you want left child");
 			lc = scn.nextBoolean();
 			if (lc) {
 				nn.left = construct(nn, true);
 			}
 
-			boolean rc;
+			boolean rc;		// rc -> right child
 			System.out.println("Do you want right child");
 			rc = scn.nextBoolean();
 			if (rc) {
@@ -112,14 +111,14 @@ public class BT_isBalanced {
 		private BalancedPair isBalanced(Node node) {
 
 			if (node == null) {
-				BalancedPair bbp = new BalancedPair();
+				BalancedPair bbp = new BalancedPair();	// bbp -> base balanced pair(base denoted as base case of recursion)
 				bbp.height = -1;
 				bbp.isBalanced = true;
 				return bbp;
 			}
 
-			BalancedPair lbp = isBalanced(node.left);
-			BalancedPair rbp = isBalanced(node.right);
+			BalancedPair lbp = isBalanced(node.left);		// lbp -> left balanced pair 
+			BalancedPair rbp = isBalanced(node.right);		// rbp -> right balanced pair
 
 			BalancedPair mbp = new BalancedPair();
 

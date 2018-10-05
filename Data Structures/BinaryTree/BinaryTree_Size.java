@@ -1,4 +1,3 @@
-package Git;
 
 import java.util.Scanner;
 
@@ -44,18 +43,18 @@ public class BinaryTree_Size {
 			}
 
 			int val = scn.nextInt();
-			Node nn = new Node();
+			Node nn = new Node(); 		// nn -> new node
 			nn.data = val;
 			this.size++;
 
-			boolean lc;
+			boolean lc;			// lc -> left child
 			System.out.println("Do you want left child");
 			lc = scn.nextBoolean();
 			if (lc) {
 				nn.left = construct(nn, true);
 			}
 
-			boolean rc;
+			boolean rc;			// rc -> right child
 			System.out.println("Do you want right child");
 			rc = scn.nextBoolean();
 			if (rc) {
@@ -107,8 +106,8 @@ public class BinaryTree_Size {
 				return 0;
 			}
 
-			int ls = size2(node.left);
-			int rs = size2(node.right);
+			int ls = size2(node.left);	// ls -> left size
+			int rs = size2(node.right);	// rs -> right size
 
 			return ls + rs + 1;
 

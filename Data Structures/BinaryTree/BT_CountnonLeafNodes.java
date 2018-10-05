@@ -1,4 +1,3 @@
-package Git;
 
 import java.util.Scanner;
 
@@ -32,7 +31,7 @@ public class BT_CountnonLeafNodes {
 			this.root = construct(null, false);
 		}
 
-		private Node construct(Node parent, boolean ilc) {
+		private Node construct(Node parent, boolean ilc) {	// ilc -> is left child (give true for left and false for right)
 
 			if (parent == null) {
 				System.out.println("Enter the data for root node ? ");
@@ -45,18 +44,18 @@ public class BT_CountnonLeafNodes {
 			}
 
 			int val = scn.nextInt();
-			Node nn = new Node();
+			Node nn = new Node();	// nn -> new node 
 			nn.data = val;
 			this.size++;
 
-			boolean lc;
+			boolean lc;		// lc -> left child
 			System.out.println("Do you want left child");
 			lc = scn.nextBoolean();
 			if (lc) {
 				nn.left = construct(nn, true);
 			}
 
-			boolean rc;
+			boolean rc;		// rc -> right child
 			System.out.println("Do you want right child");
 			rc = scn.nextBoolean();
 			if (rc) {
@@ -108,8 +107,8 @@ public class BT_CountnonLeafNodes {
 				return 0;
 			}
 
-			int ln = countNonLeafNodes(node.left);
-			int rn = countNonLeafNodes(node.right);
+			int ln = countNonLeafNodes(node.left);		// ln -> count of left node leafs
+			int rn = countNonLeafNodes(node.right);		// rn -> count of right node leafs
 
 			return ln + rn + 1;
 

@@ -1,4 +1,3 @@
-package Git;
 
 import java.util.Scanner;
 
@@ -110,8 +109,8 @@ public class BT_numOfLeafs {
 				return 1;
 			}
 
-			int ln = numLeafs(node.left);
-			int rn = numLeafs(node.right);
+			int ln = numLeafs(node.left);		// ln -> left tree's no of leafs
+			int rn = numLeafs(node.right);		// rn -> right tree's no of leafs
 
 			return ln + rn;
 

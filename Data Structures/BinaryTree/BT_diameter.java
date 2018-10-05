@@ -1,4 +1,3 @@
-package Git;
 
 import java.util.Scanner;
 
@@ -32,7 +31,7 @@ public class BT_diameter {
 			this.root = construct(null, false);
 		}
 
-		private Node construct(Node parent, boolean ilc) {
+		private Node construct(Node parent, boolean ilc) {		// ilc -> is left child (give true for left and false for right)
 
 			if (parent == null) {
 				System.out.println("Enter the data for root node ? ");
@@ -45,18 +44,18 @@ public class BT_diameter {
 			}
 
 			int val = scn.nextInt();
-			Node nn = new Node();
+			Node nn = new Node();		// nn -> new node
 			nn.data = val;
 			this.size++;
 
-			boolean lc;
+			boolean lc;		// lc -> left child
 			System.out.println("Do you want left child");
 			lc = scn.nextBoolean();
 			if (lc) {
 				nn.left = construct(nn, true);
 			}
 
-			boolean rc;
+			boolean rc;		// rc -> right child
 			System.out.println("Do you want right child");
 			rc = scn.nextBoolean();
 			if (rc) {
@@ -108,8 +107,8 @@ public class BT_diameter {
 				return -1;
 			}
 
-			int lh = height(node.left);
-			int rh = height(node.right);
+			int lh = height(node.left);	// lh -> left height
+			int rh = height(node.right);	// rh -> right height
 
 			return Math.max(lh, rh) + 1;
 
@@ -125,10 +124,10 @@ public class BT_diameter {
 				return 0;
 			}
 
-			int ld = diameter(node.left);
-			int rd = diameter(node.right);
+			int ld = diameter(node.left); 		// ld -> left diamter
+			int rd = diameter(node.right);		// rd -> right diameter
 
-			int sp = height(node.left) + height(node.right) + 2;
+			int sp = height(node.left) + height(node.right) + 2;	// sp -> self participation of node
 
 			return Math.max(sp, Math.max(ld, rd));
 
