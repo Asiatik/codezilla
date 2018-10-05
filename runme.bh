@@ -1,0 +1,107 @@
+#!/bin/bash
+
+intro() {
+    echo "Thank you for forking CodeZila"
+    echo "Please input any names without any special characters"
+    echo "For example: 'Insertion Sort' or 'Linked Lists'"
+    read -p "What is the name of the algorithm or design you want to implement? " algorithm
+    checkInput "$algorithm"    
+    pickLanguague "$algorithm"
+    printTree "$algorithm" "$language"
+    checkDir "$algorithm"
+}
+
+# Checks the input to see if it does not have illegal characters
+checkInput() {
+    # $1 is the string being checked
+    if [[ "$1" == *['!'@\$%^\&*()_+]* ]]
+    then
+      echo "Illegal character used"
+      exit
+    fi
+}
+
+# Asks the user that language they would like to use
+pickLanguague() {
+    echo "Select the language you want to implement "$1" in?"
+    echo "1)  C++"
+    echo "2)  C"
+    echo "3)  C#"
+    echo "4)  Java"
+    echo "5)  JavaScript"
+    echo "6)  GoLang"
+    echo "7)  Python"
+    echo "8)  Ruby"
+    echo "9)  Other"
+    read n
+    case $n in 
+        1) language='C++';;
+        2) language='C';;
+        3) language='C#';;
+        4) language='Java';;
+        5) language='JavaScript';;
+        6) language='GoLang';;
+        7) language='Python';;
+        8) language='Ruby';;
+        9) inputLanguage "$1";;
+        *) echo "Error" ; exit;;
+    esac
+
+    createDir "$1" "$language"
+}
+
+inputLanguage() {
+    read -p "What language do you want to implement '$1' in? " lang
+    checkInput "$lang"
+    createDir "$1" "$lang"
+    printTree "$1" "$lang"
+    checkDir
+    exit
+}
+
+# Shows the user the created file structure
+printTree() {
+    echo "$1"
+    echo "├── readme.md"
+    echo "└── $2"
+}
+
+# Creates the file structure
+createDir() {
+    if [ ! -d "$1" ]
+    then
+        mkdir "$1"
+    fi
+
+    if [ ! -d "$1/$2" ]
+    then
+        mkdir "$1"/$2
+    fi
+    createReadme "$1" "$2"
+}
+
+createReadme() {
+    if [ -e "$1"/"$2"/readme.md ]
+    then
+        echo "readme file already exists for '$1/$2'"
+    else
+        read -p "Do you want to create a Readme (y/n)? " response
+        case "$response" in
+            y|Y ) echo "# $1 implemented in $2" > "$1"/"$2"/readme.md;;
+            n|N ) ;;
+            * ) echo "Readme not created" ;;
+        esac
+    fi
+}
+
+# Asks the user if they want to keep the files
+checkDir() {
+    read -p "Is the file structure above correct? (y/n)? " choice
+        case "$choice" in 
+        y|Y ) echo "Enjoy Coding!";;
+        n|N ) echo "Files Deleted"; rm -rf $1 ;;
+        * ) echo "invalid - Files not deleted";;
+    esac
+}
+
+intro
