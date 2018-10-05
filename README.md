@@ -24,6 +24,12 @@ To do so, first create an issue with the task you are doing, for example: "Issue
 	eg. `observable_pattern`, `bubble_sort`.
 	Inside these directories you can create a folder for the programming language you want to add. And finally add your own file named `program_name.language_extension` (`bubble_sort.cpp`)
 	Create a commit of the form - fixes #(issue_number)
+		
+Make sure you adhere to the algorithm/language/file folder structure while adding code.
+
+Easiest way (Recommended) ⭐️ - You can run bash runme.bh to make the appropriate file structure.
+
+Additionally we recommend using standard convention for your language such as indentation and variable naming while writing the algorithm. Useful comments will be a help. Finally, if you can write tests for you code, we urge you to do so.
 
 * Finally, wait for it to be merged!
 
@@ -40,6 +46,7 @@ To do so, first create an issue with the task you are doing, for example: "Issue
   ```
   in the above example Anujg935 is the username of the user who is forking the repository.
   
+  
 * Create a branch
 
   ```sh
@@ -47,6 +54,7 @@ To do so, first create an issue with the task you are doing, for example: "Issue
   ```
 
 * Make your changes
+
 * Commit and Push
 
   ```sh
