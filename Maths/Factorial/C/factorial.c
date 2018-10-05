@@ -1,6 +1,6 @@
 #include "stdio.h"
 
-int factorial(int n) {
+long long factorial(long long n) {
 	if(n == 1) {
 		return 1;
 	}
