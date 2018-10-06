@@ -1,39 +1,43 @@
-#include<iostream>
-using namespace std;
- 
-int main(){
-  int array[5];
-  cout<<"Enter 5 numbers : "<<endl;
-  for(int i=0; i<5; i++)
-  {
-    cin>>array[i];
-  }
-  cout<<endl;
-  cout<<"Input array is: "<<endl;
- 
-  for(int j=0; j<5; j++)
-  {
-    cout<<"\t\t\tValue at "<<j<<" Index: "<<array[j]<<endl;
-  }
-  cout<<endl;
-  // Bubble Sort
-  int temp;
-  for(int i2=0; i2<=4; i2++)
-  {
-    for(int j=0; j<4; j++)
-    {
-      if(array[j]>array[j+1])
-      {
-        temp=array[j];
-        array[j]=array[j+1];
-        array[j+1]=temp;
-      }
-    }
-  }
-  cout<<"  Sorted Array is: "<<endl;
-  for(int i3=0; i3<5; i3++)
-  {
-    cout<<"\t\t\tValue at "<<i3<<" Index: "<<array[i3]<<endl;
-  }
-  return 0;
+#include<iostream.h>
+#include<conio.h>
+#include<stdlib.h>
+int bsort(int ar[],int size)
+{
+int tmp,cnt=0;
+for(int i=0;i<size;i++)
+{
+	for(int j=0;j<size-i;j++)
+	{
+		if(ar[j]>ar[j+1])
+		{
+		cnt++;
+		tmp=ar[j];
+		ar[j]=ar[j+1];
+		ar[j+1]=tmp;
+		}
+	}
+}
+return cnt;
+}
+void main()
+{
+clrscr();
+	randomize();
+	int cnt,size;
+	for(int k=0;k<14;k++)
+	{
+	size=random(10)+10;
+	int *a=new int[size];
+	for(int i=0;i<size;i++)
+	{
+	a[i]=random(100);
+	cout<<a[i]<<" ";
+	}
+	cnt=bsort(a,size-1);
+	cout<<"\n";
+	for(int i1=0;i1<size;i1++)
+	cout<<a[i1]<<" ";
+	cout<<"cmp"<<cnt<<"\n\n";
+	}
+	getch();
 }
