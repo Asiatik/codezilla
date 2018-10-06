@@ -72,10 +72,10 @@ BOOST_AUTO_TEST_CASE(testSize){
 BOOST_AUTO_TEST_CASE(testSearch){
 	BOOST_CHECK(true == list1->isEmpty());
 	BOOST_CHECK(true == list2->isEmpty());
-	//Search number not inserted / in empty list
+
+    //Search number not inserted / in empty list
 	for(int i = 0 ; i < 10000;i++){
 		BOOST_CHECK(NULL == list1->search(i));
-		BOOST_CHECK(NULL == list2->search(i));
 	}	
 	
 	for(int i = 0 ;  i <  1000;i++){
