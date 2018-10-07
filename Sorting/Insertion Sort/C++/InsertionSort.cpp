@@ -1,38 +1,50 @@
-// Insertion sort algorithm implemented in C++
-
 #include <iostream>
+#include<conio.h>
+#include<stdlib.h>
+
+#define MAX_SIZE 5
+
 using namespace std;
 
-// Insertion sort function
+void insertion(int[]);
 
-void insertionSort(int array[],int size){
-	int current;
-	int i,j;
-	for(i=0;i<size;i++){
-		current=array[i];
-		for(j=i;j>0 && array[j-1] > current;j--){
-			array[j]=array[j-1];
-		}
-		array[j]=current;
-	}
+int main() {
+    int arr_sort[MAX_SIZE], i;
+
+    cout << "Simple C++ Insertion Sort Example - Array and Functions\n";
+    cout << "\nEnter " << MAX_SIZE << " Elements for Sorting : " << endl;
+    for (i = 0; i < MAX_SIZE; i++)
+        cin >> arr_sort[i];
+
+    cout << "\nYour Data   :";
+    for (i = 0; i < MAX_SIZE; i++) {
+        cout << "\t" << arr_sort[i];
+    }
+
+    insertion(arr_sort);
+    getch();
 }
 
-// Main function to perform sorting
+void insertion(int fn_arr[]) {
+    int i, j, a, t;
+    for (i = 1; i < MAX_SIZE; i++) {
+        t = fn_arr[i];
+        j = i - 1;
 
-int main(){
-    int i;
-    int array_size;
-    cout<< "Enter the size of the array to be sorted: ";
-    cin>> array_size;
-    int array[array_size];
-    cout<<"Enter the elements of the array to be sorted: ";
-    for(i=0;i<array_size;i++){
-        cin>>array[i];
+        while (j >= 0 && fn_arr[j] > t) {
+            fn_arr[j + 1] = fn_arr[j];
+            j = j - 1;
+        }
+        fn_arr[j + 1] = t;
+
+        cout << "\nIteration : " << i;
+        for (a = 0; a < MAX_SIZE; a++) {
+            cout << "\t" << fn_arr[a];
+        }
     }
-    insertionSort(array,array_size);
-    cout<<"Sorted array is:\n";
-    for(i=0;i<array_size;i++){
-        cout<<array[i]<<"\n";
+
+    cout << "\n\nSorted Data :";
+    for (i = 0; i < MAX_SIZE; i++) {
+        cout << "\t" << fn_arr[i];
     }
-    return 0;
 }
