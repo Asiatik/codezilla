@@ -38,7 +38,18 @@ public class BinarySearch{
     
     //Simple desmonstration of the function
     public static void main(String args[]){
-        System.out.println(binarySearch(new int[]{1,2,3,4,5},6));
-        System.out.println(binarySearch(new int[]{1,2,3,4,5},3));
+        int result = binarySearch(new int[]{1,2,3,4,5},6);
+        if (result == -1) {
+            System.out.println("Element not found");
+        } else {
+            System.out.println("Element found at index " + result);
+        }
+
+        result = binarySearch(new int[]{1,2,3,4,5},3);
+        if (result == -1) {
+            System.out.println("Element not found");
+        } else {
+            System.out.println("Element found at index " + result);
+        }
     }
 }
