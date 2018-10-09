@@ -1,22 +1,33 @@
 # Knuth-Morris-Pratt (KMP) Algorithm
-KMP is a linear time string matching algorithm. The naive approach to string matching involves
+KMP is a linear time string matching algorithm. The problem involves finding
+all occurences where a string pattern matches a substring in a text.
+The naive approach to string matching involves
 looping over all indicies over a text string and finding the indicies
 where the pattern p matches the substring starting at the index.
-s.t. pattern[0 ... m-1] = text[idx ... idx + m - 1].
 
-The worst case of this approach is O(m*(n-m+1)), where m is the |p| and
-n is |text|.
+s.t. pattern[0 ... m - 1] = text[idx ... idx + m - 1], where idx is some offset.
 
-The main drawback of the naive appraoch is that it handles almost matches
+The worst case of this approach is O(m*(n-m+1)), where m is |p| and n is |text|.
+
+The main drawback of the naive appraoch is that it handles overlaps
 poorly. Since it will go deep into the second nested loop when checking
-whether the substring and the pattern matches. For example if we have
-pattern "asdqweX" and string "asdqweY" we then check almost the entire
-pattern before realising that there are no matches.
+whether the substring and the pattern matches. When it hits a mismatch
+it will start over from the next increment, thereby redoing some of its
+comparisons.
 
 The KMP algorithm solves this problem by relying on some clever preprocessing,
 thereby reaching a linear time performance. The clever preprocessing is simply
 creating an array that contains information calculated by a prefix function, and this information describes how the pattern matches against shifts of itself. 
-We use this array to avoid the worst case situation of the naive approach.
+We use this array to avoid the worst case situation of the naive approach by reusing previously performed comparisons.
+
+The prefix-function(i) is the longest prefix of p that is also a suffix of p[1 ... i]. The whole idea of finding these substrings in the
+pattern which are both prefixes and suffixes, is that they determine from what index in the pattern and text we should start from next, hence
+avoiding having to start all the way at the start index of the pattern and only one index further in the text each time we hit a
+character miss match. See the example subsection for a concrete example.
+
+KMP runs in O(n + m). Note, KMP is only necessary when there are many overlapping parts, since it is only in such
+situations where the prefix-suffix array helps. However, the worst case linear time efficiency is guaranteed, meaning
+the KMP algorithm is useful in general cases aswell. 
 
 ## Pseudocode
 t is the text string and p is the pattern.
@@ -43,14 +54,11 @@ t is the text string and p is the pattern.
         for i = 1 to m:
             while k > 0 and  p[k] != p[i]:
                 k = arr[k]
-            if p[k + 1] == p[i]:
+            if p[k] == p[i]:
                 k++
             arr[i] = k
         
         return arr
 
 
-## Example
-text = "Hello world!";
-pattern = "world";
 
