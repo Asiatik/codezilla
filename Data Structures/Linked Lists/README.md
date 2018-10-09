@@ -6,5 +6,5 @@ The next node in the list
 
 Images from Wikipedia
 
-![alt text](../Singly-linked-list.png)
+![alt text](Singly-linked-list.png)
 ![alt text](../Doubly-linked-list.png)
