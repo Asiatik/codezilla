@@ -23,14 +23,14 @@ We use this array to avoid the worst case situation of the naive approach by reu
 The prefix-function(i) is the longest prefix of p that is also a suffix of p[1 ... i]. The whole idea of finding these substrings in the
 pattern which are both prefixes and suffixes, is that they determine from what index in the pattern and text we should start from next, hence
 avoiding having to start all the way at the start index of the pattern and only one index further in the text each time we hit a
-character miss match. See the example subsection for a concrete example.
+character miss match.
 
 KMP runs in O(n + m). Note, KMP is only necessary when there are many overlapping parts, since it is only in such
 situations where the prefix-suffix array helps. However, the worst case linear time efficiency is guaranteed, meaning
 the KMP algorithm is useful in general cases aswell. 
 
 ## Pseudocode
-t is the text string and p is the pattern.
+Where t is the text string and p is the pattern.
 
     KMP-Matcher(t, p):
         n = len(t)
@@ -59,6 +59,8 @@ t is the text string and p is the pattern.
             arr[i] = k
         
         return arr
+
+CLRS[p. 1006].
 
 
 
