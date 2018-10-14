@@ -1,5 +1,6 @@
 #include "stdio.h"
 
+
 long long factorial(long long n) {
 	if(n == 1) {
 		return 1;
@@ -10,5 +11,6 @@ long long factorial(long long n) {
 }
 
 int main(int argc, char * argv[]) {
-	printf( "%d\n", factorial(5));
+	printf("Enter a number");
+	scanf("%d",&n);
 }
