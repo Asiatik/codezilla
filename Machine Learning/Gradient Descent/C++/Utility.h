@@ -11,11 +11,17 @@ using namespace std;
 using namespace boost;
 
 // Generating data from a linear function.
-vector<double> GetLinearFunctionData(pair<int,int> range, double x, double yIntercept){
-    vector<double> data(range.second);
-    for(int i = 0; i < range.second; ++i){
-        data[i] = (i + range.first) * x + yIntercept;
+pair<vector<double>, vector<double>> GetLinearFunctionData(pair<int,int> range, double x, double yIntercept){
+    vector<double> xData(range.second);
+    vector<double> yData(range.second);
+    int numSamples = range.second - range.first;
+
+    for(int i = range.first, k = 0; i < range.second, k < numSamples; ++i, ++k){
+        xData[k] = i;
+        yData[k] = i * x + yIntercept;
     }
+
+    pair<vector<double>, vector<double>> data(xData, yData);
     return data;
 }
 

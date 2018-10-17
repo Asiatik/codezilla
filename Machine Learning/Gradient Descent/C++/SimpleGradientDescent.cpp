@@ -3,36 +3,31 @@
 
 using namespace std;
 
-vector<double> Predict(vector<double> data, pair<double, double> model){
-    int numDataPoints = data.size();
+vector<double> Predict(vector<double> x, pair<double, double> model){
+    int numDataPoints = x.size();
     vector<double> predictions(numDataPoints);
     for(int i = 0; i < numDataPoints; ++i){
-        predictions[i] = i * model.first + model.second;
+        predictions[i] = x[i] * model.first + model.second;
     }
     return predictions;
 }
 
-pair<double, double> GradientDescent(vector<double> data, double learningRate, pair<double, double> model){
-    return pair<double, double>(0.0, 0.0);
-}
-
-pair<double, double> LinearRegression(vector<double> data, unsigned int epochs, double learningRate){
-    // Initialize our linear regression model as: 1x + 1.
+pair<double, double> LinearRegression(vector<double> x, vector<double> y, unsigned int epochs, double learningRate){
+    // Initialize our linear regression model as: 0x + 0.
     pair<double, double> model(0, 0);
     for(int i = 0; i < epochs; ++i){
-        auto predictions = Predict(data, model);
+        auto predictions = Predict(x, model);
 
         // Calculate gradiants for x and y intercept.
-        int numSamples = data.size();
-        double gradientX = 0;
-        double gradientY = 0;
+        int numSamples = x.size();
+        double gradientX = 0.0;
+        double gradientY = 0.0;
+
         for(int k = 0; k < numSamples; ++k){
-            double loss = data[k] - predictions[k];
-            gradientY -= loss;
-            gradientX -= loss * data[k];
+            double error = y[k] - predictions[k];
+            gradientX += ((-2.0) / (double) numSamples) * error *y[k];
+            gradientY += ((-2.0) / (double) numSamples) * error;
         }
-        gradientX *= (double) 2/numSamples;
-        gradientY *= (double) 2/numSamples;
 
         // Perform gradient descent step.
         model.first = model.first - (learningRate * gradientX);
@@ -46,13 +41,17 @@ int main(){
     pair<int,int> range = pair<int,int>(0,100);
 
     // Get data from the following linear function: 2x + 5. 
-    vector<double> data = GetLinearFunctionData(range, 2, 5);
+    pair<vector<double>, vector<double>> data = GetLinearFunctionData(range, 2, 5);
+    vector<double> xData = data.first;
+    vector<double> yData = data.second;
 
-    pair<double, double> model = LinearRegression(data, 100000, 0.0001);
-    auto predictions = Predict(data, model);
+    pair<double, double> model = LinearRegression(xData, yData, 10000, 0.0001);
+    auto predictions = Predict(xData, model);
 
     cout << "Data generating function: 2x + 5" << endl;
-    cout << "Mean squared error: " << MSE(data, predictions) << endl;
+    // Mean squared error: 2.37223.
+    cout << "Mean squared error: " << MSE(yData, predictions) << endl;
+    // Learned model: 2.04665x + 1.94324.
     cout << "Learned model: " << model.first << "x + " << model.second << endl;
 
     return 0;
