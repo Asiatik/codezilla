@@ -26,7 +26,7 @@ public class InsertionSort {
          System.out.println("Enter the number of elements in the array: ");
          int n=sc.nextInt();
          System.out.println("Enter "+n+" elements to be soterd in the array: ");
-         for(int i=1;i<n;i++)
+         for(int i=0;i<n;i++)
             int arr[i] =sc.nextInt();
  
         System.out.println("Given Array");
