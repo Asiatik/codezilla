@@ -1,9 +1,9 @@
 #include <iostream>
 #include <stdexcept>
 #include <string>
-#include "LinkedGraphEdge.h"
-#include "LinkedListElement.h"
-#include "LinkedList.h"
+#include "LinkedGraphEdge.hpp"
+#include "LinkedListElement.hpp"
+#include "LinkedList.hpp"
 
 template<typename T>
 LinkedList<T>::LinkedList() {

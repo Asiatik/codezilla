@@ -1,5 +1,5 @@
-#ifndef MST_ARRAYLIST_H_
-#define MST_ARRAYLIST_H_
+#ifndef MST_ARRAYLIST_HPP_
+#define MST_ARRAYLIST_HPP_
 
 template<typename T>
 class ArrayList {

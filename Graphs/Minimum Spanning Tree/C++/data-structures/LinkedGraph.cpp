@@ -1,6 +1,6 @@
 #include <sstream>
 #include <limits>
-#include "LinkedGraph.h"
+#include "LinkedGraph.hpp"
 
 LinkedGraph::LinkedGraph(int nodeCount) {
 	addNodes(nodeCount);

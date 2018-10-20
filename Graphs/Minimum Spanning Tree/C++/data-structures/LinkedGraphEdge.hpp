@@ -1,5 +1,5 @@
-#ifndef MST_LINKEDGRAPHEDGE_H_
-#define MST_LINKEDGRAPHEDGE_H_
+#ifndef MST_LINKEDGRAPHEDGE_HPP_
+#define MST_LINKEDGRAPHEDGE_HPP_
 
 class LinkedGraphEdge {
 
@@ -14,4 +14,4 @@ public:
 	
 };
 
-#endif //MST_LINKEDGRAPHEDGE_H_
+#endif //MST_LINKEDGRAPHEDGE_HPP_

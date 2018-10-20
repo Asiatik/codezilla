@@ -1,5 +1,5 @@
-#ifndef MST_NANOSECONDS_H_
-#define MST_NANOSECONDS_H_
+#ifndef MST_NANOSECONDS_HPP_
+#define MST_NANOSECONDS_HPP_
 
 #include <chrono>
 
@@ -7,4 +7,4 @@ inline long long int nanoseconds(std::chrono::time_point<std::chrono::high_resol
 	return std::chrono::duration_cast<std::chrono::nanoseconds>(until - since).count();
 }
 
-#endif //MST_NANOSECONDS_H_
+#endif //MST_NANOSECONDS_HPP_

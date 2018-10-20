@@ -1,11 +1,11 @@
 #include <iostream>
 #include <random>
 #include <chrono>
-#include "data-structures/LinkedGraph.h"
-#include "prim.h"
-#include "kruskal.h"
-#include "nanoseconds.h"
-#include "mst.h"
+#include "data-structures/LinkedGraph.hpp"
+#include "prim.hpp"
+#include "kruskal.hpp"
+#include "nanoseconds.hpp"
+#include "mst.hpp"
 
 int main(int argc, char** argv) {
 	LinkedGraph graph = LinkedGraph();

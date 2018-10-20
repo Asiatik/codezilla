@@ -1,10 +1,10 @@
-#ifndef MST_LINKEDGRAPH_H_
-#define MST_LINKEDGRAPH_H_
+#ifndef MST_LINKEDGRAPH_HPP_
+#define MST_LINKEDGRAPH_HPP_
 
 #include <string>
-#include "ArrayList.h"
-#include "LinkedList.h"
-#include "LinkedGraphEdge.h"
+#include "ArrayList.hpp"
+#include "LinkedList.hpp"
+#include "LinkedGraphEdge.hpp"
 
 class LinkedGraph {
 	
@@ -24,4 +24,4 @@ public:
 	
 };
 
-#endif //MST_LINKEDGRAPH_H_
+#endif //MST_LINKEDGRAPH_HPP_

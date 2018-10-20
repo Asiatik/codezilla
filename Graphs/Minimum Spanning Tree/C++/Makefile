@@ -8,9 +8,9 @@ objects ::= $(addprefix out/, \
               ArrayList.o LinkedList.o LinkedListElement.o)
 # Prefix all data structure headers with their directory
 data_structure_headers ::= $(addprefix data-structures/, \
-                             ArrayList.h \
-                             LinkedList.h LinkedListElement.h \
-                             LinkedGraph.h LinkedGraphEdge.h)
+                             ArrayList.hpp \
+                             LinkedList.hpp LinkedListElement.hpp \
+                             LinkedGraph.hpp LinkedGraphEdge.hpp)
 
 # Set executable extension for the platform
 ifeq ($(OS),Windows_NT)
@@ -46,13 +46,13 @@ out :
 
 # Build each compilation unit
 
-out/mst.o : mst.cpp mst.h prim.h kruskal.h $(data_structure_headers) | out
+out/mst.o : mst.cpp mst.hpp prim.hpp kruskal.hpp $(data_structure_headers) | out
 	$(CXX) $(compileargs) -c -o out/mst.o mst.cpp
 
-out/prim.o : prim.cpp prim.h $(data_structure_headers) | out
+out/prim.o : prim.cpp prim.hpp $(data_structure_headers) | out
 	$(CXX) $(compileargs) -c -o out/prim.o prim.cpp
 
-out/kruskal.o : kruskal.cpp kruskal.h $(data_structure_headers) | out
+out/kruskal.o : kruskal.cpp kruskal.hpp $(data_structure_headers) | out
 	$(CXX) $(compileargs) -c -o out/kruskal.o kruskal.cpp
 
 out/LinkedGraph.o : data-structures/LinkedGraph.cpp $(data_structure_headers) | out

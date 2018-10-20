@@ -1,5 +1,5 @@
 #include <limits>
-#include "data-structures/LinkedGraph.h"
+#include "data-structures/LinkedGraph.hpp"
 
 LinkedGraph* findMstPrim(LinkedGraph& graph) {
 	ArrayList<LinkedList<LinkedGraphEdge*>*>* nodes = graph.nodes;

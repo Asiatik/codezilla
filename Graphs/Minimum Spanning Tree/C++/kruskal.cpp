@@ -1,5 +1,5 @@
 #include <limits>
-#include "data-structures/LinkedGraph.h"
+#include "data-structures/LinkedGraph.hpp"
 
 LinkedGraph* findMstKruskal(LinkedGraph& graph) {
 	ArrayList<LinkedList<LinkedGraphEdge*>*>* nodes = graph.nodes;

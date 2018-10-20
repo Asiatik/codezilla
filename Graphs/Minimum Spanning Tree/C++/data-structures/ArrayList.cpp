@@ -1,9 +1,9 @@
 #include <iostream>
 #include <stdexcept>
 #include <string>
-#include "LinkedList.h"
-#include "LinkedGraphEdge.h"
-#include "ArrayList.h"
+#include "LinkedList.hpp"
+#include "LinkedGraphEdge.hpp"
+#include "ArrayList.hpp"
 
 template<typename T>
 ArrayList<T>::ArrayList() {

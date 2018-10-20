@@ -1,4 +1,4 @@
-#include "LinkedGraphEdge.h"
+#include "LinkedGraphEdge.hpp"
 
 LinkedGraphEdge::LinkedGraphEdge(int origin, int destination, int metric) {
 	originNode = origin;

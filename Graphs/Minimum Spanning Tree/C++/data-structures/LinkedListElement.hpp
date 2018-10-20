@@ -1,5 +1,5 @@
-#ifndef MST_LINKEDLISTELEMENT_H_
-#define MST_LINKEDLISTELEMENT_H_
+#ifndef MST_LINKEDLISTELEMENT_HPP_
+#define MST_LINKEDLISTELEMENT_HPP_
 
 template <typename T>
 class LinkedListElement {
@@ -22,4 +22,4 @@ public:
 	
 };
 
-#endif //MST_LINKEDLISTELEMENT_H_
+#endif //MST_LINKEDLISTELEMENT_HPP_

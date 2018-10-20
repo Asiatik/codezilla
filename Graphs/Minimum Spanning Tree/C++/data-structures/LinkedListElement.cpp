@@ -1,5 +1,5 @@
-#include "LinkedGraphEdge.h"
-#include "LinkedListElement.h"
+#include "LinkedGraphEdge.hpp"
+#include "LinkedListElement.hpp"
 
 template <typename T>
 LinkedListElement<T>::LinkedListElement(T const value) {

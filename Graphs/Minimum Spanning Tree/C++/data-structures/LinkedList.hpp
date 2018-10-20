@@ -1,7 +1,7 @@
-#ifndef MST_LINKEDLIST_H_
-#define MST_LINKEDLIST_H_
+#ifndef MST_LINKEDLIST_HPP_
+#define MST_LINKEDLIST_HPP_
 
-#include "LinkedListElement.h"
+#include "LinkedListElement.hpp"
 
 template<typename T>
 class LinkedList {
@@ -34,4 +34,4 @@ protected:
 	
 };
 
-#endif //MST_LINKEDLIST_H_
+#endif //MST_LINKEDLIST_HPP_
