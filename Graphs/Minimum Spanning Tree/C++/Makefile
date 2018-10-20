@@ -3,7 +3,8 @@ linkargs ::=
 libraries ::=
 # Prefix all object file names with the compilation directory
 objects ::= $(addprefix out/, \
-              mst.o LinkedGraph.o LinkedGraphEdge.o \
+              mst.o prim.o kruskal.o \
+              LinkedGraph.o LinkedGraphEdge.o \
               ArrayList.o LinkedList.o LinkedListElement.o)
 # Prefix all data structure headers with their directory
 data_structure_headers ::= $(addprefix data-structures/, \
@@ -45,8 +46,14 @@ out :
 
 # Build each compilation unit
 
-out/mst.o : mst.cpp mst.h $(data_structure_headers) | out
+out/mst.o : mst.cpp mst.h prim.h kruskal.h $(data_structure_headers) | out
 	$(CXX) $(compileargs) -c -o out/mst.o mst.cpp
+
+out/prim.o : prim.cpp prim.h $(data_structure_headers) | out
+	$(CXX) $(compileargs) -c -o out/prim.o prim.cpp
+
+out/kruskal.o : kruskal.cpp kruskal.h $(data_structure_headers) | out
+	$(CXX) $(compileargs) -c -o out/kruskal.o kruskal.cpp
 
 out/LinkedGraph.o : data-structures/LinkedGraph.cpp $(data_structure_headers) | out
 	$(CXX) $(compileargs) -c -o out/LinkedGraph.o data-structures/LinkedGraph.cpp

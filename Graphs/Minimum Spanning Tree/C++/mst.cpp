@@ -1,6 +1,8 @@
 #include <iostream>
 #include <random>
 #include "data-structures/LinkedGraph.h"
+#include "prim.h"
+#include "kruskal.h"
 #include "mst.h"
 
 int main(int argc, char** argv) {
@@ -10,9 +12,9 @@ int main(int argc, char** argv) {
 	std::cout << "Generated graph:\n";
 	printGraph(graph);
 	std::cout << "Minimum spanning tree, DJP algorithm:\n";
-	findMstPrim(graph);
+	runPrim(graph);
 	std::cout << "Minimum spanning tree, Kruskal's algorithm:\n";
-	findMstKruskal(graph);
+	runKruskal(graph);
 	return 0;
 }
 
@@ -95,15 +97,15 @@ void printGraph(LinkedGraph& graph) {
 	std::cout << graph.toString() << "\n";
 }
 
-void findMstPrim(LinkedGraph& graph) {
-	LinkedGraph* mst = graph.findMstPrim();
+void runPrim(LinkedGraph& graph) {
+	LinkedGraph* mst = findMstPrim(graph);
 	std::cout << mst->toString();
 	std::cout << "Total edge metric: " << mst->totalEdgeMetric() << "\n\n";
 	delete mst;
 }
 
-void findMstKruskal(LinkedGraph& graph) {
-	LinkedGraph* mst = graph.findMstKruskal();
+void runKruskal(LinkedGraph& graph) {
+	LinkedGraph* mst = findMstKruskal(graph);
 	std::cout << mst->toString();
 	std::cout << "Total edge metric: " << mst->totalEdgeMetric() << "\n\n";
 	delete mst;

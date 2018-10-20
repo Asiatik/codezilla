@@ -8,10 +8,9 @@
 
 class LinkedGraph {
 	
-private:
+public:
 	ArrayList<LinkedList<LinkedGraphEdge*>*>* nodes = new ArrayList<LinkedList<LinkedGraphEdge*>*>();
 	
-public:
 	LinkedGraph() = default;
 	LinkedGraph(int nodeCount);
 	~LinkedGraph() = default;
@@ -22,9 +21,6 @@ public:
 	std::string toString();
 	int totalEdgeMetric();
 	bool containsEdge(int from, int to);
-	
-	LinkedGraph* findMstPrim();
-	LinkedGraph* findMstKruskal();
 	
 };
 
