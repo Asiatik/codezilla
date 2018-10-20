@@ -1,8 +1,10 @@
 #include <iostream>
 #include <random>
+#include <chrono>
 #include "data-structures/LinkedGraph.h"
 #include "prim.h"
 #include "kruskal.h"
+#include "nanoseconds.h"
 #include "mst.h"
 
 int main(int argc, char** argv) {
@@ -98,15 +100,35 @@ void printGraph(LinkedGraph& graph) {
 }
 
 void runPrim(LinkedGraph& graph) {
+	std::chrono::time_point<std::chrono::high_resolution_clock> timeBefore;
+	std::chrono::time_point<std::chrono::high_resolution_clock> timeAfter;
+	
+	timeBefore = std::chrono::high_resolution_clock::now();
+	
 	LinkedGraph* mst = findMstPrim(graph);
+	
+	timeAfter = std::chrono::high_resolution_clock::now();
+	
 	std::cout << mst->toString();
-	std::cout << "Total edge metric: " << mst->totalEdgeMetric() << "\n\n";
+	std::cout << "Total edge metric: " << mst->totalEdgeMetric() << "\n";
 	delete mst;
+	
+	std::cout << "Computation took " << nanoseconds(timeBefore, timeAfter) << " ns\n\n";
 }
 
 void runKruskal(LinkedGraph& graph) {
+	std::chrono::time_point<std::chrono::high_resolution_clock> timeBefore;
+	std::chrono::time_point<std::chrono::high_resolution_clock> timeAfter;
+	
+	timeBefore = std::chrono::high_resolution_clock::now();
+	
 	LinkedGraph* mst = findMstKruskal(graph);
+	
+	timeAfter = std::chrono::high_resolution_clock::now();
+	
 	std::cout << mst->toString();
-	std::cout << "Total edge metric: " << mst->totalEdgeMetric() << "\n\n";
+	std::cout << "Total edge metric: " << mst->totalEdgeMetric() << "\n";
 	delete mst;
+	
+	std::cout << "Computation took " << nanoseconds(timeBefore, timeAfter) << " ns\n\n";
 }
