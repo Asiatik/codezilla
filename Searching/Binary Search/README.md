@@ -1,6 +1,7 @@
 # Binary Search
 
 >Worst Case Time Complexity: O(log n)
+>Best Case Time Complexity: O(1)
 
 >Space Complexity: (O(1))
 
