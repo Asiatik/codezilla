@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-  //Test Code
+        //Test Code
 	array := []int{1, 6, 2, 4, 9, 0, 5, 3, 7, 8}
 	fmt.Println("Unsorted array: ", array)
 	sort(array)
