@@ -1,6 +1,6 @@
 //Bubble sort Algorithm
 // Java program for implementation of BubbleSort
-
+import java.util.Scanner;
 class BubbleSort
 {
 	/* Fuction Implementing Bubble Sort Algorithm */
@@ -38,12 +38,17 @@ class BubbleSort
 	// Driver program
 	public static void main(String args[])
 	{
-		int arr[] = {10, 7, 8, 9, 1, 5};
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the number of elements to be sorted: ");
+		int len=sc.nextInt();
+		System.out.println("Enter the elements to be sorted: ");
+		for(int i=0;i<len;i++)
+			int arr[i] = sc.nextInt();
 
 		BubbleSort ob = new BubbleSort();
 		ob.sort(arr);
 
-		System.out.println("sorted array");
+		System.out.println("The sorted elements are in the order: ");
 		printArray(arr);
 	}
 }
