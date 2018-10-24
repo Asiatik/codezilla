@@ -1,21 +1,27 @@
-#include<iostream.h>
-#include<conio.h>
+#include <iostream>
 
-void main()
+using namespace std;
+
+void fibonacci(int number)
 {
-	int i, no, first = 0, second = 1, next;
-	clrscr();
-	first = 0;
-	second = 1;
-	cout << "Enter nubmer of terms for Series: ";
-	cin >> no;
-	cout << "Fibonacci series are: \n";
-	for (i = 0; i<no; i++)
+	int first = 0, second = 1, next;
+
+	for (int i = 0; i < number; i++)
 	{
 		cout << "\n" << first;
 		next = first + second;
 		first = second;
 		second = next;
 	}
-	getch();
+}
+
+int main()
+{
+	int number;
+
+	cout << "Enter number of terms for Series: ";
+	cin >> number;
+
+	cout << "Fibonacci Series are: \n";
+	fibonacci(number);
 }
