@@ -6,7 +6,11 @@
         {
             "label": "echo",
             "type": "shell",
-            "command": "echo Hello"
+            "command": "g++ SelectionSort.cpp",
+            "group":{
+                "kind": "build",
+                "isDefault": true
+            }
         }
     ]
 }
