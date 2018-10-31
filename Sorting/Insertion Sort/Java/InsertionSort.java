@@ -1,4 +1,5 @@
 // insertion sort algorithm implemented in java
+import java.util.Scanner;
 public class InsertionSort {
     /*
     this function takes an array and assumes the first index as sorted part
@@ -21,7 +22,12 @@ public class InsertionSort {
     // driver program
      public static void main(String args[])
     {
-        int arr[] = {10,1,0,11,12,20,21};
+         Scanner sc=new Scanner(System.in);
+         System.out.println("Enter the number of elements in the array: ");
+         int n=sc.nextInt();
+         System.out.println("Enter "+n+" elements to be soterd in the array: ");
+         for(int i=0;i<n;i++)
+            int arr[i] =sc.nextInt();
  
         System.out.println("Given Array");
         System.out.print(Arrays.toString(arr));
