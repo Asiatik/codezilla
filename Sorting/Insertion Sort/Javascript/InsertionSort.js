@@ -10,9 +10,9 @@ function insertionSort (items) {
       // the last item we've reached should now hold the value of the currently sorted item
       items[j + 1] = value
     }
-  
+
     return list
   }
-  
+
   const list = [54, 26, 93, 17, 77, 31, 44, 55, 20]
   console.log(insertionSort(list)) // [ 17, 20, 26, 31, 44, 54, 55, 77, 93 ]
