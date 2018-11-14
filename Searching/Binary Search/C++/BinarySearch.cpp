@@ -19,7 +19,7 @@ int binarySearch(int itemList[],int itemListSize,int item)
     int leftIndex = 0;
     int rightIndex = itemListSize;
     int middleIndex;
-    while (leftIndex <= rightIndex)
+    while (leftIndex < rightIndex)
     {
         middleIndex = (leftIndex+rightIndex)/2;
         if (itemList[middleIndex] < item)

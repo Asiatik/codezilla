@@ -8,7 +8,7 @@ def binary_search(item_list,item):
     right_index = len(item_list)-1
     
     while left_index <= right_index:
-        middle_index = (left_index+right_index) / 2
+        middle_index = (left_index+right_index) // 2
         if item_list[middle_index] < item:
             left_index=middle_index+1
         elif item_list[middle_index] > item:
