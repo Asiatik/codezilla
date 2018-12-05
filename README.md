@@ -1,6 +1,6 @@
 # codezilla
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/bdd269f557ff4474a0a3b03adb0c989e)](https://www.codacy.com/app/sidhyatikku/codezilla?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=sidhyatikku/codezilla&amp;utm_campaign=Badge_Grade)[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![Gitter](https://img.shields.io/gitter/room/DAVFoundation/DAV-Contributors.svg?)](https://gitter.im/asiatik-open/codezilla)
 
 codezilla 🦖 One giant collection of algorithms &amp; design patterns. 
