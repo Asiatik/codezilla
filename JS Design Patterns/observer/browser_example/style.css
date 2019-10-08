@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body{
+    font-family:'Roboto',sans-serif;
+}
+
+.main{
+    display: flex;
+    flex-direction: column
+}
+
+.currentWordContainer{
+    align-items: center;
+    justify-content: center;
+    border: 1px slategray solid;
+    text-align: center;
+    background-color: #7b5aa6;
+    color: #FFFFFF;
+}
+
+.mainBodyContainer{
+    background-color: #5b3190;
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    height: 70vh;
+}
+
+.right{
+    border: 1px slategray solid;
+    flex: 3;
+    overflow: auto;
+}
+
+.right p{
+    text-align: center;
+    color: #FFFFFF;    
+}
+
+.bottomNote{
+    background-color: #7b5aa6;
+    padding: 20px;
+}
+
+.bottomNote p{
+    margin: 0;
+    color: #FFFFFF;
+    text-align: end;
+}
+
+.left{
+    display: flex;
+    border: 1px slategray solid;
+    flex: 4;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    display:inline-block;
+    padding:1.5em 4.5em;
+    border:0.1em solid #FFFFFF;
+    margin:0 0.3em 0.3em 0;
+    border-radius:0.12em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-weight:300;
+    text-align:center;
+    transition: all 0.2s;
+}
+
+button:hover{
+    color:#000000;
+    background-color:#FFFFFF;
+}
+
+button:active{
+    color:#000000;
+    background-color:#2b0063;
+    color: #FFFFFF;
+}

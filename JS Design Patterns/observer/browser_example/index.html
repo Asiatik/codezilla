@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Observer pattern example</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main">
+        <div class="currentWordContainer">
+            <h1>click on the button to generate a random word</h1>
+            <p>number of the generated words <span>0</span></p>
+        </div>
+        <div class="mainBodyContainer">
+            <div class="left">
+                <button onclick='wordService.generateRandomWord()'>generate</button>
+            </div>
+            <div class="right">
+                <p>List of all randomly generated words</p>
+                <hr>
+            </div>
+        </div>
+    </div>
+    <div class="bottomNote">
+        <p>very simple example of the observer pattern, this might not work on the older browsers :)</p>
+    </div>
+
+    <script src="./src/WordObservable.js"></script>
+    <script src="./src/ListObserver.js"></script>
+    <script src="./src/WordObserver.js"></script>
+    <script src="./app.js"></script>
+</body>
+</html>
