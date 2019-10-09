@@ -1,43 +1,106 @@
-/*@author Navneet Jain
- *
- * Find the longest increasing subsequence of a given sequence / array.
- * In other words, find a subsequence of array in which the subsequence’s elements are in strictly increasing order, and in which the subsequence is as long as possible. 
- * This subsequence is not necessarily contiguous, or unique.
- * In this case, we only care about the length of the longest increasing subsequence.
+#include<iostream.h>
+#include<conio.h>
+#include<stdio.h>
+void print_lcs(char **b,char *X,int m,int n);
 
- * Example :
-
- * Input : [0, 8, 4, 12, 2, 10, 6, 14, 1, 9, 5, 13, 3, 11, 7, 15]
- * Output : 6
- * The sequence : [0, 2, 6, 9, 13, 15] or [0, 4, 6, 9, 11, 15] or [0, 4, 6, 9, 13, 15]
-
-*/
-
-#include<iostream>
-#include<vector>
-
-int longestSubsequence(const std::vector<int> &A)
+void lcs(char *X,char *Y,int m,int n)
 {
-    std::vector<int> B(A.size(), 1);
-    int max_value = 1;
-    
-    for(unsigned int i = 1 ; i < A.size(); i++)
-    {
-        for(unsigned int j = 0 ; j < i; j++)
-        {
-            if(A[j] < A[i])
-            {
-                B[i] = std::max(B[i] , B[j] + 1); 
-                max_value = std::max(B[i], max_value);
-            }
-        }
-    }
-    
-    return max_value;
+
+	int **c;
+	c=new int*[m];
+	for(int i=0;i<=m;i++)
+		c[i]=new int[n];
+	char **b;
+	b=new char*[m];
+	for (i=1;i<=m;i++)
+		b[i]=new char[n];
+
+
+	for(i=1;i<=m;i++)
+		c[i][0]=0;
+	for(int j=0;j<=n;j++)
+		c[0][j]=0;
+	for(i=1;i<=m;i++)
+	{
+		for(j=1;j<=n;j++)
+		{
+			if(X[i-1]==Y[j-1])
+			{
+				c[i][j]=c[i-1][j-1]+1;
+				b[i][j]='d';
+			}
+			else if(c[i-1][j]>=c[i][j-1])
+			{
+				c[i][j]=c[i-1][j];
+				b[i][j]='u';
+			}
+			else
+			{
+				c[i][j]=c[i][j-1];
+				b[i][j]='s';
+			}
+		}
+	}
+	cout<<"\nTABLE COMPUTED BY LCS LENGTH:";
+	for(i=0;i<=m;i++)
+	{
+		cout<<"\n";
+		for(j=0;j<=n;j++)
+			cout<<c[i][j]<<" ";
+	}
+	cout<<"\nTABLE IN WHICH \n d=where enteries are equal \n s,u=enteries unequal";
+	for(i=1;i<=m;i++)
+		b[i][0]='0';
+	for(j=0;j<=n;j++)
+		b[0][j]='0';
+	for(i=0;i<=m;i++)
+	{
+		cout<<"\n";
+		for(j=0;j<=n;j++)
+			cout<<b[i][j]<<" ";
+	}
+	cout<<"\nTHE LONGEST COMMON SUBSEQUENCE IS :";
+	print_lcs(b,X,m,n);
 }
 
-int main()
+void print_lcs(char **b,char *X,int m,int n)
 {
-	std::vector<int> A = {0, 8, 4, 12, 2, 10, 6, 14, 1, 9, 5, 13, 3, 11, 7, 15};
-	std::cout << longestSubsequence(A);
+
+	if(m==0||n==0)
+		return;
+	if(b[m][n]=='d')
+	{
+		print_lcs(b,X,m-1,n-1);
+		cout<<X[m-1]<<" ";
+	}
+	else if(b[m][n]=='u')
+		print_lcs(b,X,m-1,n);
+	else
+		print_lcs(b,X,m,n-1);
+
+
+
+}
+
+
+
+
+void main()
+{
+	clrscr();
+	char *X,*Y;
+	int m,n;
+	m=n=0;
+	cout<<"Enter first string :";
+	gets(X);
+	while(X[m]!='\0')
+		m++;
+	cout<<"Length of string is :"<<m;
+	cout<<"\nEnter second string :";
+	gets(Y);
+	while(Y[n]!='\0')
+		n++;
+	cout<<"Length of string is :"<<n;
+	lcs(X,Y,m,n);
+	getch();
 }
