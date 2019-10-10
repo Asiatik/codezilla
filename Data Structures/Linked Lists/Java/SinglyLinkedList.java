@@ -1,264 +1,281 @@
-/**
- * This class Implements Singly Linked List
- *
- * @author hamza39460
- */
-public class SinglyLinkedList<T> {
+/* Author : saurav dubey */
+import java.io.*; 
 
-    /* Linked List Node */
-    private static class Node<K> {
+// Java program to implement 
+// a Singly Linked List 
+public class LinkedList { 
 
-        /*data in Node*/
-        K data;
-        /*Next node reference*/
-        Node next;
+	Node head; // head of list 
 
-        Node() {
-        }
+	// Linked list Node. 
+	// This inner class is made static 
+	// so that main() can access it 
+	static class Node { 
 
-        /**
-         * Constructor
-         *
-         * @param d to initialize data
-         */
-        Node(K d) {
-            data = d;
-        }
-    }
-    /*Head Reference to Front of List */
-    private Node<T> headNode;
-    /*Size of List*/
-    private int listSize;
+		int data; 
+		Node next; 
 
-    /**
-     * Constructor for class SinglyLinkedList Initialize head Reference to Null
-     * Initialize Size of list to 0
-     */
-    public SinglyLinkedList() {
-        headNode = null;
-        listSize = 0;
-    }
+		// Constructor 
+		Node(int d) 
+		{ 
+			data = d; 
+			next = null; 
+		} 
+	} 
 
-    /*
-    * @return head Reference of Node
-     */
-    public Node headNode() {
-        return headNode;
-    }
+	// **************INSERTION************** 
 
-    /*
-    * @return size of list
-     */
-    public int listSize() {
-        return listSize;
-    }
+	// Method to insert a new node 
+	public static LinkedList insert(LinkedList list, int data) 
+	{ 
+		// Create a new node with given data 
+		Node new_node = new Node(data); 
+		new_node.next = null; 
 
-    /**
-     * create new new Node increment in list size
-     *
-     * @param T data to store in new node
-     * @return Reference of new Node
-     */
-    private Node addNode(T data) {
-        Node<T> newNode = new Node(data);
-        listSize++;
-        return newNode;
-    }
+		// If the Linked List is empty, 
+		// then make the new node as head 
+		if (list.head == null) { 
+			list.head = new_node; 
+		} 
+		else { 
+			// Else traverse till the last node 
+			// and insert the new_node there 
+			Node last = list.head; 
+			while (last.next != null) { 
+				last = last.next; 
+			} 
 
-    /**
-     * Add Node at the end of list
-     *
-     * @param data for data of new Node
-     */
-    public void addAtEnd(T data) {
-        Node<T> newNode = addNode(data);
-        if (headNode == null) {
-            headNode = newNode;
-        } else {
-            Node<T> temp = headNode;
-            while (temp.next != null) {
-                temp = temp.next;
-            }
-            temp.next = newNode;
-        }
-    }
+			// Insert the new_node at last node 
+			last.next = new_node; 
+		} 
 
-    /**
-     * Add Node at the front of List
-     * @param data for date of new node
-     */
-    public void addAtFront(T data) {
-        Node<T> newNode = addNode(data);
-        newNode.next = headNode;
-        headNode = newNode;
-    }
-    /**
-     * add Node at specific index
-     *
-     * @param data to add data in new Node
-     * @param index index where new node has to be created
-     */
-    public void addAtPosition(T data, int index) {
-        if (index <= 0) {
-            this.addAtFront(data);
-        } else if (index >= listSize) {
-            this.addAtEnd(data);
-        } else {
-            Node<T> newNode = addNode(data);
-            Node<T> temp = headNode;
-            Node<T> tempTail = null;
-            int tempIndex = 0;
-            while (tempIndex < index && temp.next != null) {
-                tempTail = temp;
-                temp = temp.next;
-                tempIndex++;
-            }
-            newNode.next = temp;
-            tempTail.next = newNode;
-        }
-    }
-    /**
-     * delete Given key
-     * @param key data to be deleted
-     * @return 
-     *      true if deleted successfully
-     *      false if deletion was unsuccessful
-     */
-    public boolean delete(T key) {
-        if (headNode != null) {
-            if (headNode.data == key) {
-                headNode = headNode.next;
-            } else {
-                Node<T> temp = headNode;
-                Node<T> tempTail = null;
-                while (temp != null && temp.data != key) {
-                    tempTail = temp;
-                    temp = temp.next;
-                }
-                if (temp == null) {
-                    return false;
-                } else {
-                    tempTail.next = temp.next;
-                }
-            }
-            listSize--;
-            return true;
-        }
-        return false;
-    }
-    /**
-     * delete first node
-     * @return 
-     *      true if deleted successfully
-     *      false if deletion was unsuccessful
-     */
-    public boolean deleteHead() {
-        if (headNode != null) {
-            headNode = headNode.next;
-            listSize--;
-            return true;
-        }
-        return false;
-    }
-    /**
-     * delete last node
-     * @return 
-      *     true if deleted successfully
-     *      false if deletion was unsuccessful
-     */
-    public boolean deleteTail() {
-        if (headNode != null) {
-            Node<T> temp = headNode;
-            Node<T> tempTail = temp;
-            while (temp.next != null) {
-                tempTail = temp;
-                temp = temp.next;
-                
-            }
-            tempTail.next = null;
-            listSize--;
-            return true;
-        }
-        return false;
-    }
-    /**
-     *  delete node at specific index
-     * @param index the node to be deleted
-     * @return 
-      *     true if deleted successfully
-     *      false if deletion was unsuccessful
-     */
-    public boolean deleteIndex(int index) {
-        if (headNode != null) {
-            if (index >= 0 && index < listSize) {
-                if (index == 0) {
-                    this.deleteHead();
-                } else if (index == listSize - 1) {
-                    this.deleteTail();
-                } else {
-                    Node<T> temp = headNode;
-                    Node<T> tempTail = null;
-                    int tempIndex = 0;
-                    while (tempIndex < index && temp != null) {
-                        tempTail = temp;
-                        temp = temp.next;
-                        tempIndex++;
-                    }
-                    if (temp != null) {
-                        tempTail.next = temp.next;
-                    }
-                }
-                listSize--;
-                return true;
-            }
-            return false;
-        }
-        return false;
-    }
-    /**
-     * delete whole list
-     * @return 
-     *      true if deleted successfully
-     *      false if deletion was unsuccessful
-     */
-    public boolean deleteList() {
-        while (headNode != null) {
-            headNode = headNode.next;
-        }
-        return true;
-    }
+		// Return the list by head 
+		return list; 
+	} 
 
-    /**
-     * Print List
-     */
-    public void printList() {
+	// **************TRAVERSAL************** 
 
-        Node temp = headNode;
-        while (temp != null) {
-            System.out.print(temp.data);
-            System.out.print(" ");
-            temp = temp.next;
-        }
-        System.out.println();
-    }
- // Driver Program
- public static void main(String args[])
-    {
-       SinglyLinkedList<Character> obj;
-       obj = new SinglyLinkedList();
-       obj.addAtEnd('A');
-       obj.addAtEnd('B');
-       obj.addAtEnd('C');
-       obj.addAtFront('D');
-       obj.addAtPosition('E' ,3);
-       obj.printList();
-       obj.deleteIndex(2);
-       obj.printList();
-       obj.delete('A');
-       obj.printList();
-       obj.deleteHead();
-       obj.printList();
-       obj.deleteTail();
-       obj.printList();
-    }  
-}
+	// Method to print the LinkedList. 
+	public static void printList(LinkedList list) 
+	{ 
+		Node currNode = list.head; 
+
+		System.out.print("\nLinkedList: "); 
+
+		// Traverse through the LinkedList 
+		while (currNode != null) { 
+			// Print the data at current node 
+			System.out.print(currNode.data + " "); 
+
+			// Go to next node 
+			currNode = currNode.next; 
+		} 
+		System.out.println("\n"); 
+	} 
+
+	// **************DELETION BY KEY************** 
+
+	// Method to delete a node in the LinkedList by KEY 
+	public static LinkedList deleteByKey(LinkedList list, int key) 
+	{ 
+		// Store head node 
+		Node currNode = list.head, prev = null; 
+
+		// 
+		// CASE 1: 
+		// If head node itself holds the key to be deleted 
+
+		if (currNode != null && currNode.data == key) { 
+			list.head = currNode.next; // Changed head 
+
+			// Display the message 
+			System.out.println(key + " found and deleted"); 
+
+			// Return the updated List 
+			return list; 
+		} 
+
+		// 
+		// CASE 2: 
+		// If the key is somewhere other than at head 
+		// 
+
+		// Search for the key to be deleted, 
+		// keep track of the previous node 
+		// as it is needed to change currNode.next 
+		while (currNode != null && currNode.data != key) { 
+			// If currNode does not hold key 
+			// continue to next node 
+			prev = currNode; 
+			currNode = currNode.next; 
+		} 
+
+		// If the key was present, it should be at currNode 
+		// Therefore the currNode shall not be null 
+		if (currNode != null) { 
+			// Since the key is at currNode 
+			// Unlink currNode from linked list 
+			prev.next = currNode.next; 
+
+			// Display the message 
+			System.out.println(key + " found and deleted"); 
+		} 
+
+		// 
+		// CASE 3: The key is not present 
+		// 
+
+		// If key was not present in linked list 
+		// currNode should be null 
+		if (currNode == null) { 
+			// Display the message 
+			System.out.println(key + " not found"); 
+		} 
+
+		// return the List 
+		return list; 
+	} 
+
+	// **************DELETION AT A POSITION************** 
+
+	// Method to delete a node in the LinkedList by POSITION 
+	public static LinkedList deleteAtPosition(LinkedList list, int index) 
+	{ 
+		// Store head node 
+		Node currNode = list.head, prev = null; 
+
+		// 
+		// CASE 1: 
+		// If index is 0, then head node itself is to be deleted 
+
+		if (index == 0 && currNode != null) { 
+			list.head = currNode.next; // Changed head 
+
+			// Display the message 
+			System.out.println(index + " position element deleted"); 
+
+			// Return the updated List 
+			return list; 
+		} 
+
+		// 
+		// CASE 2: 
+		// If the index is greater than 0 but less than the size of LinkedList 
+		// 
+		// The counter 
+		int counter = 0; 
+
+		// Count for the index to be deleted, 
+		// keep track of the previous node 
+		// as it is needed to change currNode.next 
+		while (currNode != null) { 
+
+			if (counter == index) { 
+				// Since the currNode is the required position 
+				// Unlink currNode from linked list 
+				prev.next = currNode.next; 
+
+				// Display the message 
+				System.out.println(index + " position element deleted"); 
+				break; 
+			} 
+			else { 
+				// If current position is not the index 
+				// continue to next node 
+				prev = currNode; 
+				currNode = currNode.next; 
+				counter++; 
+			} 
+		} 
+
+		// If the position element was found, it should be at currNode 
+		// Therefore the currNode shall not be null 
+		// 
+		// CASE 3: The index is greater than the size of the LinkedList 
+		// 
+		// In this case, the currNode should be null 
+		if (currNode == null) { 
+			// Display the message 
+			System.out.println(index + " position element not found"); 
+		} 
+
+		// return the List 
+		return list; 
+	} 
+
+	// **************MAIN METHOD************** 
+
+	// method to create a Singly linked list with n nodes 
+	public static void main(String[] args) 
+	{ 
+		/* Start with the empty list. */
+		LinkedList list = new LinkedList(); 
+
+		// 
+		// ******INSERTION****** 
+		// 
+
+		// Insert the values 
+		list = insert(list, 1); 
+		list = insert(list, 2); 
+		list = insert(list, 3); 
+		list = insert(list, 4); 
+		list = insert(list, 5); 
+		list = insert(list, 6); 
+		list = insert(list, 7); 
+		list = insert(list, 8); 
+
+		// Print the LinkedList 
+		printList(list); 
+
+		// 
+		// ******DELETION BY KEY****** 
+		// 
+
+		// Delete node with value 1 
+		// In this case the key is ***at head*** 
+		deleteByKey(list, 1); 
+
+		// Print the LinkedList 
+		printList(list); 
+
+		// Delete node with value 4 
+		// In this case the key is present ***in the middle*** 
+		deleteByKey(list, 4); 
+
+		// Print the LinkedList 
+		printList(list); 
+
+		// Delete node with value 10 
+		// In this case the key is ***not present*** 
+		deleteByKey(list, 10); 
+
+		// Print the LinkedList 
+		printList(list); 
+
+		// 
+		// ******DELETION AT POSITION****** 
+		// 
+
+		// Delete node at position 0 
+		// In this case the key is ***at head*** 
+		deleteAtPosition(list, 0); 
+
+		// Print the LinkedList 
+		printList(list); 
+
+		// Delete node at position 2 
+		// In this case the key is present ***in the middle*** 
+		deleteAtPosition(list, 2); 
+
+		// Print the LinkedList 
+		printList(list); 
+
+		// Delete node at position 10 
+		// In this case the key is ***not present*** 
+		deleteAtPosition(list, 10); 
+
+		// Print the LinkedList 
+		printList(list); 
+	} 
+} 
