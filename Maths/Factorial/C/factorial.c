@@ -11,6 +11,9 @@ long long factorial(long long n) {
 }
 
 int main(int argc, char * argv[]) {
-	printf("Enter a number");
-	scanf("%d",&n);
+	
+	long long n;
+	printf("Enter a number: ");
+	scanf("%lld",&n);
+	printf("Factorial = %lld\n", factorial(n));
 }
