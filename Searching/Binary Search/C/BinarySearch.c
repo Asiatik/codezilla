@@ -42,7 +42,7 @@ int binarySearch(int itemList[],int itemListSize,int item)
 int main(int argc,char* argv[])
 {   
     int arr[] = {1,2,3,4,5};
-    printf("%d",binarySearch(arr,sizeof(arr)/sizeof(arr[0]),3));
+    printf("%d\n",binarySearch(arr,sizeof(arr)/sizeof(arr[0]),3));
     printf("%d",binarySearch(arr,sizeof(arr)/sizeof(arr[0]),0));
     
 }
