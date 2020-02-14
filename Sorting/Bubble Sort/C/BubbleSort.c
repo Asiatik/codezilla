@@ -35,7 +35,6 @@ int main()
 { 
     int arr[] = {6, 4, 5, 8, 2, 1, 9}; 
     int n = sizeof(arr)/sizeof(arr[0]); 
-  scanf("%d",&n);
     bubbleSort(arr, n); 
     printArray(arr, n); 
     return 0; 
