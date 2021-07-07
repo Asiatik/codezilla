@@ -1,0 +1,8 @@
+1 Take input of data.
+2. Call MergeSort() function.
+3. Recursively split the array into two equal parts.
+4. Split them until we get at most one element in both half.
+5. Combine the result by invoking Merge().
+6. It combines the individually sorted data from low to mid and mid+1 to high.
+7. Return to main and display the result.
+8. Exit.
